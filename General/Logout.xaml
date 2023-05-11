@@ -1,0 +1,487 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Logout" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1154,3471" sap2010:WorkflowViewState.IdRef="Logout_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="37">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="35">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="It will logout from the ACME page" DisplayName="Logout" sap:VirtualizedContainerService.HintSize="995,3406" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Start Message" sap:VirtualizedContainerService.HintSize="953,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Logout started&quot;]" />
+    <TryCatch DisplayName="Logout" sap:VirtualizedContainerService.HintSize="953,3021" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="915,2794" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Input Validation" sap:VirtualizedContainerService.HintSize="873,83" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+          <Sequence DisplayName="Landing page validation" sap:VirtualizedContainerService.HintSize="873,903" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="5aehhMtY4g2iuEltqGUyepTZ6e4e+EpS8erhB7sk0hR9UqY41ifbtSA8pBDrm+pqLO38A274w118WWeNiZJEfw==" CvMethod="ElementDetection, OCR" DesignTimeCacheId="ca2013b6-26cc-4c7b-803d-5e291e5e4852" DisplayName="CV Screen Scope 'NAV'" sap:VirtualizedContainerService.HintSize="789,811" sap2010:WorkflowViewState.IdRef="CVScope_4" Version="V3">
+              <p:CVScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:Boolean" Name="LogoutExists" />
+                    </Sequence.Variables>
+                    <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'pom' (1157,11,45,31)&quot;]" DesignTimeCacheId="ca2013b6-26cc-4c7b-803d-5e291e5e4852" DesignTimeScaleFactor="1" DisplayName="CV Element Exists - Text" sap:VirtualizedContainerService.HintSize="755,136" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_3" InformativeScreenshot="2b9c9bd72a012d18655ffa435b25deb1" Result="[LogoutExists]" Version="V3">
+                      <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                        <uc:CvDescriptor>
+                          <uc:CvDescriptor.Target>
+                            <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1157, 11, 45, 31" ElementType="Text" Text="pom" />
+                          </uc:CvDescriptor.Target>
+                        </uc:CvDescriptor>
+                      </p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                    </p:CvElementExistsWithDescriptor>
+                    <If Condition="[LogoutExists]" sap:VirtualizedContainerService.HintSize="755,340" sap2010:WorkflowViewState.IdRef="If_3">
+                      <If.Then>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Already logged in. Login out...&quot;]" />
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Error" Message="[&quot;Not logged in&quot;]" />
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </ActivityAction>
+              </p:CVScope.Body>
+              <p:CVScope.DesignTimeCacheContainer>
+                <uc:CvCacheContainer>
+                  <uc:CvCacheContainer.Caches>
+                    <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
+                      <uc:CVCache DisplayName="Screen CV Element Exists - 'po (Main)" Id="ca2013b6-26cc-4c7b-803d-5e291e5e4852" InformativeScreenshot="de998de2bd331c844f7d22e1d68e33fd" LogicalPosition="0, 71" OcrText="AEE SEED 9 Ce SHEMOEEE pom" Position="0, 71" ScreenshotGuid="2f5ec091-2181-4052-9f77-96d0f2e9dfdb" ServerVersion="1">
+                        <uc:CVCache.CvUiElements>
+                          <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="4">
+                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="98, 3, 873, 43" />
+                          </scg:List>
+                        </uc:CVCache.CvUiElements>
+                        <uc:CVCache.OcrTexts>
+                          <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="8">
+                            <uc:OcrTextInfo Region="48, 11, 69, 32" Text="AEE" />
+                            <uc:OcrTextInfo Region="114, 11, 68, 32" Text="SEED" />
+                            <uc:OcrTextInfo Region="183, 16, 10, 17" Text="9" />
+                            <uc:OcrTextInfo Region="896, 11, 68, 31" Text="Ce" />
+                            <uc:OcrTextInfo Region="987, 18, 216, 17" Text="SHEMOEEE" />
+                            <uc:OcrTextInfo Region="1157, 11, 45, 31" Text="pom" />
+                          </scg:List>
+                        </uc:CVCache.OcrTexts>
+                      </uc:CVCache>
+                    </scg:List>
+                  </uc:CvCacheContainer.Caches>
+                </uc:CvCacheContainer>
+              </p:CVScope.DesignTimeCacheContainer>
+              <p:CVScope.OCREngine>
+                <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+                  <ActivityFunc.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                  </ActivityFunc.Argument>
+                  <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GoogleOCR_1" Image="[Image]" />
+                </ActivityFunc>
+              </p:CVScope.OCREngine>
+              <p:CVScope.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="38620a02-9597-4af9-a322-49d05626e9ed" InformativeScreenshot="ddf53e53f554e3510dc3914c86d85d8e" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;&lt;webctrl tag='NAV' /&gt;" WaitForReady="INTERACTIVE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </p:CVScope.Target>
+              <p:CVScope.UseLocalServer>
+                <InArgument x:TypeArguments="x:Boolean" />
+              </p:CVScope.UseLocalServer>
+            </p:CVScope>
+          </Sequence>
+          <Sequence DisplayName="Logout" sap:VirtualizedContainerService.HintSize="873,539" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="5aehhMtY4g2iuEltqGUyepTZ6e4e+EpS8erhB7sk0hR9UqY41ifbtSA8pBDrm+pqLO38A274w118WWeNiZJEfw==" CvMethod="ElementDetection, OCR" DesignTimeCacheId="19dbce80-f9c3-4dd8-a34e-90c41597e770" DisplayName="CV Screen Scope 'NAV'" sap:VirtualizedContainerService.HintSize="434,447" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V3">
+              <p:CVScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" Descriptor="[&quot;Target: Text 'pom' (1157,11,45,31)&quot;]" DesignTimeCacheId="19dbce80-f9c3-4dd8-a34e-90c41597e770" DesignTimeScaleFactor="1" DisplayName="Click on logout button" sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_1" InformativeScreenshot="2b9c9bd72a012d18655ffa435b25deb1" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                      <p:CvClickWithDescriptor.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </p:CvClickWithDescriptor.CursorPosition>
+                      <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                        <uc:CvDescriptor>
+                          <uc:CvDescriptor.Target>
+                            <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1157, 11, 45, 31" ElementType="Text" Text="pom" />
+                          </uc:CvDescriptor.Target>
+                        </uc:CvDescriptor>
+                      </p:CvClickWithDescriptor.DesignTimeDescriptor>
+                      <p:CvClickWithDescriptor.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="d98a872c-b53e-4e68-8089-aec53aba8aef">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </p:CvClickWithDescriptor.Target>
+                    </p:CvClickWithDescriptor>
+                  </Sequence>
+                </ActivityAction>
+              </p:CVScope.Body>
+              <p:CVScope.DesignTimeCache>
+                <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" />
+              </p:CVScope.DesignTimeCache>
+              <p:CVScope.DesignTimeCacheContainer>
+                <uc:CvCacheContainer>
+                  <uc:CvCacheContainer.Caches>
+                    <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
+                      <uc:CVCache DisplayName="Screen CV Click - 'pom' (Main)" Id="19dbce80-f9c3-4dd8-a34e-90c41597e770" InformativeScreenshot="de998de2bd331c844f7d22e1d68e33fd" LogicalPosition="0, 71" OcrText="AEE SEED 9 Ce SHEMOEEE pom" Position="0, 71" ScreenshotGuid="73e17a0c-f3af-4919-83df-980205f8d7fd" ServerVersion="1">
+                        <uc:CVCache.CvUiElements>
+                          <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="4">
+                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="101, 6, 842, 41" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="179, 13, 16, 21" />
+                          </scg:List>
+                        </uc:CVCache.CvUiElements>
+                        <uc:CVCache.OcrTexts>
+                          <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="8">
+                            <uc:OcrTextInfo Region="48, 11, 69, 32" Text="AEE" />
+                            <uc:OcrTextInfo Region="114, 11, 68, 32" Text="SEED" />
+                            <uc:OcrTextInfo Region="183, 16, 10, 17" Text="9" />
+                            <uc:OcrTextInfo Region="896, 11, 68, 31" Text="Ce" />
+                            <uc:OcrTextInfo Region="987, 18, 216, 17" Text="SHEMOEEE" />
+                            <uc:OcrTextInfo Region="1157, 11, 45, 31" Text="pom" />
+                          </scg:List>
+                        </uc:CVCache.OcrTexts>
+                      </uc:CVCache>
+                    </scg:List>
+                  </uc:CvCacheContainer.Caches>
+                </uc:CvCacheContainer>
+              </p:CVScope.DesignTimeCacheContainer>
+              <p:CVScope.OCREngine>
+                <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+                  <ActivityFunc.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                  </ActivityFunc.Argument>
+                  <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GoogleOCR_1" Image="[Image]" />
+                </ActivityFunc>
+              </p:CVScope.OCREngine>
+              <p:CVScope.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="19a2efd0-4df4-4b9f-a023-8e4e52106e4f" InformativeScreenshot="ddf53e53f554e3510dc3914c86d85d8e" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Work Items' /&gt;&lt;webctrl tag='NAV' /&gt;" WaitForReady="INTERACTIVE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </p:CVScope.Target>
+              <p:CVScope.UseLocalServer>
+                <InArgument x:TypeArguments="x:Boolean" />
+              </p:CVScope.UseLocalServer>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </p:CVScope>
+          </Sequence>
+          <Sequence DisplayName="Exit landing page" sap:VirtualizedContainerService.HintSize="873,1057" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="5aehhMtY4g2iuEltqGUyepTZ6e4e+EpS8erhB7sk0hR9UqY41ifbtSA8pBDrm+pqLO38A274w118WWeNiZJEfw==" CvMethod="ElementDetection, OCR" DesignTimeCacheId="bcef86de-ce7a-4d61-98b2-739c89971841" DisplayName="CV Screen Scope 'BODY'" sap:VirtualizedContainerService.HintSize="831,965" sap2010:WorkflowViewState.IdRef="CVScope_2" Version="V3">
+              <p:CVScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:Boolean" Name="LoginExists" />
+                    </Sequence.Variables>
+                    <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'Login' (64,96,85,33)&quot; +&#xA;&quot;Anchor: Text 'AEE SEED 9' (48,11,145,32)&quot;]" DesignTimeCacheId="bcef86de-ce7a-4d61-98b2-739c89971841" DesignTimeScaleFactor="1" DisplayName="Login page exists?" sap:VirtualizedContainerService.HintSize="797,136" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_1" InformativeScreenshot="42e4fc8d47adaa451e4df2ac1649e5f8" Result="[LoginExists]" Version="V3">
+                      <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                        <uc:CvDescriptor>
+                          <uc:CvDescriptor.Anchors>
+                            <x:Array Type="uc:CvElementDescriptor">
+                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="48, 11, 145, 32" ElementType="Text" Text="AEE SEED 9" />
+                            </x:Array>
+                          </uc:CvDescriptor.Anchors>
+                          <uc:CvDescriptor.Target>
+                            <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="64, 96, 85, 33" ElementType="Text" Text="Login" />
+                          </uc:CvDescriptor.Target>
+                        </uc:CvDescriptor>
+                      </p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                    </p:CvElementExistsWithDescriptor>
+                    <If Condition="[LoginExists]" sap:VirtualizedContainerService.HintSize="797,494" sap2010:WorkflowViewState.IdRef="If_1">
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,337" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Close window" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="f4" KeyModifiers="Alt">
+                            <ui:SendHotkey.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="fc5eba42-2a10-44e9-8b2a-035051b8c379">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:SendHotkey.Target>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:SendHotkey>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Successfully logged out&quot;]" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[&quot;Error while logout&quot;]" />
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </ActivityAction>
+              </p:CVScope.Body>
+              <p:CVScope.DesignTimeCache>
+                <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" />
+              </p:CVScope.DesignTimeCache>
+              <p:CVScope.DesignTimeCacheContainer>
+                <uc:CvCacheContainer>
+                  <uc:CvCacheContainer.Caches>
+                    <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
+                      <uc:CVCache DisplayName="Screen CV Element Exists - 'Lo (Main)" Id="bcef86de-ce7a-4d61-98b2-739c89971841" InformativeScreenshot="6dc38bce11329876a7e02b9b59e5eb8d" LogicalPosition="0, 71" OcrText="AEE SEED 9 CED 6pm&#xA;Login&#xA;Home / Login&#xA;To continue, please authenticate here&#xA;Email:&#xA;Password:&#xA;(OJ&#xA;Remember Me&#xA;Forgot Your&#xA;Password? ~~ Register" Position="0, 71" ScreenshotGuid="fdffae7a-1dce-4f8d-b224-0a680bdfb6e4" ServerVersion="1">
+                        <uc:CVCache.CvUiElements>
+                          <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="16">
+                            <uc:CvElementInfo Category="InputBox" Region="130, 369, 488, 37" />
+                            <uc:CvElementInfo Category="Button" Region="130, 460, 63, 37" />
+                            <uc:CvElementInfo Category="InputBox" Region="131, 295, 487, 38" />
+                            <uc:CvElementInfo Category="Button" Region="370, 460, 81, 37" />
+                            <uc:CvElementInfo Category="CheckBox" Region="131, 423, 16, 16" />
+                            <uc:CvElementInfo Category="Button" Region="195, 459, 174, 37" />
+                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="64, 87, 1141, 54" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="1187, 16, 17, 17" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="180, 13, 15, 21" />
+                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="54, 50, 787, 93" />
+                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="933, 193, 272, 28" />
+                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="58, 160, 1147, 37" />
+                            <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="116, 169, 15, 18" />
+                          </scg:List>
+                        </uc:CVCache.CvUiElements>
+                        <uc:CVCache.OcrTexts>
+                          <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="32">
+                            <uc:OcrTextInfo Region="48, 11, 69, 32" Text="AEE" />
+                            <uc:OcrTextInfo Region="114, 11, 68, 32" Text="SEED" />
+                            <uc:OcrTextInfo Region="183, 16, 10, 17" Text="9" />
+                            <uc:OcrTextInfo Region="925, 11, 54, 31" Text="CED" />
+                            <uc:OcrTextInfo Region="1161, 19, 42, 16" Text="6pm" />
+                            <uc:OcrTextInfo Region="64, 96, 85, 33" Text="Login" />
+                            <uc:OcrTextInfo Region="77, 173, 36, 10" Text="Home" />
+                            <uc:OcrTextInfo Region="123, 173, 4, 10" Text="/" />
+                            <uc:OcrTextInfo Region="136, 173, 35, 13" Text="Login" />
+                            <uc:OcrTextInfo Region="132, 240, 24, 17" Text="To" />
+                            <uc:OcrTextInfo Region="165, 240, 99, 20" Text="continue," />
+                            <uc:OcrTextInfo Region="269, 240, 72, 22" Text="please" />
+                            <uc:OcrTextInfo Region="346, 240, 132, 17" Text="authenticate" />
+                            <uc:OcrTextInfo Region="484, 240, 48, 17" Text="here" />
+                            <uc:OcrTextInfo Region="132, 277, 42, 10" Text="Email:" />
+                            <uc:OcrTextInfo Region="132, 351, 72, 10" Text="Password:" />
+                            <uc:OcrTextInfo Region="126, 420, 21, 23" Text="(OJ" />
+                            <uc:OcrTextInfo Region="145, 424, 80, 13" Text="Remember" />
+                            <uc:OcrTextInfo Region="226, 426, 18, 10" Text="Me" />
+                            <uc:OcrTextInfo Region="210, 473, 144, 13" Text="Forgot" />
+                            <uc:OcrTextInfo Region="247, 465, 36, 25" Text="Your" />
+                            <uc:OcrTextInfo Region="283, 473, 72, 13" Text="Password?" />
+                            <uc:OcrTextInfo Region="362, 465, 14, 25" Text="~~" />
+                            <uc:OcrTextInfo Region="385, 473, 56, 13" Text="Register" />
+                          </scg:List>
+                        </uc:CVCache.OcrTexts>
+                      </uc:CVCache>
+                    </scg:List>
+                  </uc:CvCacheContainer.Caches>
+                </uc:CvCacheContainer>
+              </p:CVScope.DesignTimeCacheContainer>
+              <p:CVScope.OCREngine>
+                <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+                  <ActivityFunc.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                  </ActivityFunc.Argument>
+                  <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GoogleOCR_1" Image="[Image]" />
+                </ActivityFunc>
+              </p:CVScope.OCREngine>
+              <p:CVScope.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3b3d4eaa-0cf7-4c90-9a05-ca4d41072290" InformativeScreenshot="6c644768614740917fcdc7d78d591339" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Log In' /&gt;&lt;webctrl tag='BODY' /&gt;" WaitForReady="INTERACTIVE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </p:CVScope.Target>
+              <p:CVScope.UseLocalServer>
+                <InArgument x:TypeArguments="x:Boolean" />
+              </p:CVScope.UseLocalServer>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </p:CVScope>
+          </Sequence>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="919,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Error in logout&quot;]" />
+              <Throw Exception="[New BusinessRuleException(&quot;Error in logout&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:LogMessage DisplayName="End Message" sap:VirtualizedContainerService.HintSize="953,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Logout ended&quot;]" />
+  </Sequence>
+</Activity>
