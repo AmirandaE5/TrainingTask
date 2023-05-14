@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1154,8772</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1127,8732</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UploadYearlyReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="40">
@@ -119,7 +119,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="1057,7658" sap2010:WorkflowViewState.IdRef="Sequence_17">
+        <Sequence DisplayName="Uploading yearly report" sap:VirtualizedContainerService.HintSize="1057,7658" sap2010:WorkflowViewState.IdRef="Sequence_17">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -993,7 +993,7 @@
                               </ui:Target>
                             </ui:SendHotkey.Target>
                           </ui:SendHotkey>
-                          <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Button (1016,468,88,26)&quot; +&#xD;&#xA;&quot;Anchor: Text 'concer' (1043,476,36,9)&quot;]" DesignTimeCacheId="68cd61ec-be9a-48c9-8c2e-c18673f28e19" DesignTimeScaleFactor="1" DisplayName="CV Click - Button" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_11" InformativeScreenshot="6e3e2998f6f3dbf08aa39ff69e8578af" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                          <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Button (1016,468,88,26)&quot; +&#xA;&quot;Anchor: Text 'concer' (1043,476,36,9)&quot;]" DesignTimeCacheId="68cd61ec-be9a-48c9-8c2e-c18673f28e19" DesignTimeScaleFactor="1" DisplayName="CV Click - Button" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_11" InformativeScreenshot="6e3e2998f6f3dbf08aa39ff69e8578af" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
                             <p:CvClickWithDescriptor.CursorPosition>
                               <ui:CursorPosition Position="Center">
                                 <ui:CursorPosition.OffsetX>
@@ -1037,11 +1037,14 @@
                   </Sequence>
                 </ActivityAction>
               </p:CVScope.Body>
+              <p:CVScope.DesignTimeCache>
+                <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" />
+              </p:CVScope.DesignTimeCache>
               <p:CVScope.DesignTimeCacheContainer>
                 <uc:CvCacheContainer>
                   <uc:CvCacheContainer.Caches>
                     <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
-                      <uc:CVCache DisplayName="Screen CV Element Exists - 'Ch (Main)" Id="68cd61ec-be9a-48c9-8c2e-c18673f28e19" InformativeScreenshot="6219b9f70cb04d6a65e48b3f8e43d11a" LogicalPosition="0, 71" OcrText="[ACME]System)i] CIR STEER Mem |&#xD;&#xA;1 © Open x L&#xD;&#xA;€ 3 v0 « Documents » Reports «|| | sesrch Reports »|&#xD;&#xA;Reports - Upload Yearly Re ogm- evo =e m0&#xD;&#xA;Name - [oemoded [pe ———&#xD;&#xA;F Quick access&#xD;&#xA;Home / Reports - Upload Yearly Report Coen ¢ Cl DESRR22n REAM XISKFie&#xD;&#xA;[0] DErs7s65-2022:50 422/2023315PM  XISKFile&#xD;&#xA;eee lots rb en Foo 4A sai im use&#xD;&#xA;et x wasn SXF&#xD;&#xA;AN SXF&#xD;&#xA;Vendor Taxi: J romans was SXF&#xD;&#xA;[ rosrizsz | Check the file name and try again. 4/22/2023 3.43PM XLSX File&#xD;&#xA;vear |&#xD;&#xA;[ 2022 - ] J ThisPC ]&#xD;&#xA;[ Select Report File ] iF Never &lt;t 1 &gt;&#xD;&#xA;Fie name: |Romz32 202230 of Jaeres of&#xD;&#xA;[ ego re | | open || concer |&#xD;&#xA;Copyright © 2023 ACME Systems. -" Position="0, 71" ScreenshotGuid="8d746d96-017b-46f6-8014-63aede786ee8" ServerVersion="1">
+                      <uc:CVCache DisplayName="Screen CV Element Exists - 'Ch (Main)" Id="68cd61ec-be9a-48c9-8c2e-c18673f28e19" InformativeScreenshot="6219b9f70cb04d6a65e48b3f8e43d11a" LogicalPosition="0, 71" OcrText="[ACME]System)i] CIR STEER Mem |&#xA;1 © Open x L&#xA;€ 3 v0 « Documents » Reports «|| | sesrch Reports »|&#xA;Reports - Upload Yearly Re ogm- evo =e m0&#xA;Name - [oemoded [pe ———&#xA;F Quick access&#xA;Home / Reports - Upload Yearly Report Coen ¢ Cl DESRR22n REAM XISKFie&#xA;[0] DErs7s65-2022:50 422/2023315PM  XISKFile&#xA;eee lots rb en Foo 4A sai im use&#xA;et x wasn SXF&#xA;AN SXF&#xA;Vendor Taxi: J romans was SXF&#xA;[ rosrizsz | Check the file name and try again. 4/22/2023 3.43PM XLSX File&#xA;vear |&#xA;[ 2022 - ] J ThisPC ]&#xA;[ Select Report File ] iF Never &lt;t 1 &gt;&#xA;Fie name: |Romz32 202230 of Jaeres of&#xA;[ ego re | | open || concer |&#xA;Copyright © 2023 ACME Systems. -" Position="0, 71" ScreenshotGuid="8d746d96-017b-46f6-8014-63aede786ee8" ServerVersion="1">
                         <uc:CVCache.CvTables>
                           <x:Array Type="uc:CvTableInfo">
                             <uc:CvTableInfo>
