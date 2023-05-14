@@ -1,12 +1,12 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="ReportsExtractVendorID" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property sap2010:Annotation.AnnotationText="It will have the work item ID to navigate into the details page" Name="WorkItemID" Type="InArgument(x:String)" />
-    <x:Property sap2010:Annotation.AnnotationText="It will have the TaxID from each customer" Name="TaxID" Type="OutArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="It will have the work item ID to navigate into the details page" Name="WorkItemId" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="It will have the TaxID from each customer" Name="TaxId" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1154,3116</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>985,3376</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReportsExtractVendorID_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
@@ -86,18 +86,20 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="It will extract the Vendor ID from the WI details page" DisplayName="ReportsExtractVendorID" sap:VirtualizedContainerService.HintSize="953,3051" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="It will extract the Vendor ID from the WI details page" DisplayName="ReportsExtractVendorID" sap:VirtualizedContainerService.HintSize="995,861" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="WorkItemExists" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="911,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Reports extract vendor ID started&quot;]" />
-    <TryCatch DisplayName="Reports Extract" sap:VirtualizedContainerService.HintSize="911,2666" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Start Message" sap:VirtualizedContainerService.HintSize="953,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Reports extract vendor ID started&quot;]" />
+    <TryCatch DisplayName="Reports Extract" sap:VirtualizedContainerService.HintSize="953,476" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -105,23 +107,23 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="873,2439" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence DisplayName="Extracting vendor ID" sap:VirtualizedContainerService.HintSize="915,2699" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Input Validation" sap:VirtualizedContainerService.HintSize="831,495" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Input Validation" sap:VirtualizedContainerService.HintSize="873,495" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[String.IsNullOrEmpty(WorkItemID)]" sap:VirtualizedContainerService.HintSize="755,403" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[String.IsNullOrEmpty(WorkItemID)]" DisplayName="CHeck If work items id is valid" sap:VirtualizedContainerService.HintSize="755,403" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <Sequence DisplayName="Invalid workitem" sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_10">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -136,28 +138,59 @@
               </If.Else>
             </If>
           </Sequence>
-          <Sequence DisplayName="Landing page validation" sap:VirtualizedContainerService.HintSize="831,83" sap2010:WorkflowViewState.IdRef="Sequence_5">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </Sequence>
-          <Sequence DisplayName="Extract vendor ID" sap:VirtualizedContainerService.HintSize="831,684" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence DisplayName="Extract vendor ID" sap:VirtualizedContainerService.HintSize="873,2072" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="5aehhMtY4g2iuEltqGUyepTZ6e4e+EpS8erhB7sk0hR9UqY41ifbtSA8pBDrm+pqLO38A274w118WWeNiZJEfw==" CvMethod="ElementDetection, OCR" DesignTimeCacheId="8eb6a5ef-313a-4f38-b81b-1b60a3f00f23" DisplayName="CV Screen Scope 'BODY'" sap:VirtualizedContainerService.HintSize="434,592" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V3">
+            <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="5aehhMtY4g2iuEltqGUyepTZ6e4e+EpS8erhB7sk0hR9UqY41ifbtSA8pBDrm+pqLO38A274w118WWeNiZJEfw==" CvMethod="ElementDetection, OCR" DesignTimeCacheId="8eb6a5ef-313a-4f38-b81b-1b60a3f00f23" DisplayName="CV Screen Scope work items" sap:VirtualizedContainerService.HintSize="831,1980" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V3">
               <p:CVScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                   </ActivityAction.Argument>
                   <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                    <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyWordGroup (209,337,72,10)&quot; +&#xA;&quot;Anchor: Text 'TaxID:' (164,337,42,10)&quot;]" DesignTimeCacheId="8eb6a5ef-313a-4f38-b81b-1b60a3f00f23" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="400,166" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_2" InformativeScreenshot="fe5de7d63db59b67c765dd52d7d6a4f6" RefreshBefore="True" Result="[TaxID]" Version="V3">
+                    <Sequence DisplayName="Input validation" sap:VirtualizedContainerService.HintSize="797,670" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'Home / Work Items / Work ltem Details' (77,173,261,10)&quot;]" DesignTimeCacheId="8eb6a5ef-313a-4f38-b81b-1b60a3f00f23" DesignTimeScaleFactor="1" DisplayName="Work items page loaded" sap:VirtualizedContainerService.HintSize="755,136" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_2" InformativeScreenshot="d19a6f39f6b91120c2753bd75657cc9a" Result="[WorkItemExists]" Version="V3">
+                        <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                          <uc:CvDescriptor>
+                            <uc:CvDescriptor.Target>
+                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="77, 173, 261, 10" ElementType="Text" Text="Home / Work Items / Work ltem Details" />
+                            </uc:CvDescriptor.Target>
+                          </uc:CvDescriptor>
+                        </p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                      </p:CvElementExistsWithDescriptor>
+                      <If Condition="[WorkItemExists]" DisplayName="If workitems page loaded" sap:VirtualizedContainerService.HintSize="755,402" sap2010:WorkflowViewState.IdRef="If_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <ui:LogMessage DisplayName="Success workitem page loadedMessage" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Extract Vendor ID success&quot;]" />
+                        </If.Then>
+                        <If.Else>
+                          <Sequence DisplayName="Error loading work items page" sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Error loading work items page Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Error" Message="[&quot;Error in Extract vendor ID page&quot;]" />
+                            <Throw DisplayName="Throw Error loading work items page" Exception="[New BusinessRuleException(&quot;Error in Extract vendor ID page&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                    <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyWordGroup (209,337,72,10)&quot; +&#xA;&quot;Anchor: Text 'TaxID:' (164,337,42,10)&quot;]" DesignTimeCacheId="8eb6a5ef-313a-4f38-b81b-1b60a3f00f23" DesignTimeScaleFactor="1" DisplayName="Get TaxID" sap:VirtualizedContainerService.HintSize="797,166" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_2" InformativeScreenshot="fe5de7d63db59b67c765dd52d7d6a4f6" RefreshBefore="True" Result="[TaxID]" Version="V3">
                       <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                         <uc:CvDescriptor>
                           <uc:CvDescriptor.Anchors>
@@ -171,7 +204,46 @@
                         </uc:CvDescriptor>
                       </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                     </p:CvGetTextWithDescriptor>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="400,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[TaxID]" />
+                    <ui:LogMessage DisplayName="Tax IDMessage" sap:VirtualizedContainerService.HintSize="797,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[TaxID]" />
+                    <Sequence DisplayName="Exit Page validation" sap:VirtualizedContainerService.HintSize="797,670" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'Home / Work Items / Work ltem Details' (77,173,261,10)&quot;]" DesignTimeCacheId="8eb6a5ef-313a-4f38-b81b-1b60a3f00f23" DesignTimeScaleFactor="1" DisplayName="Work items page loaded" sap:VirtualizedContainerService.HintSize="755,136" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_1" InformativeScreenshot="d19a6f39f6b91120c2753bd75657cc9a" Result="[WorkItemExists]" Version="V3">
+                        <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                          <uc:CvDescriptor>
+                            <uc:CvDescriptor.Target>
+                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="77, 173, 261, 10" ElementType="Text" Text="Home / Work Items / Work ltem Details" />
+                            </uc:CvDescriptor.Target>
+                          </uc:CvDescriptor>
+                        </p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                      </p:CvElementExistsWithDescriptor>
+                      <If Condition="[WorkItemExists]" DisplayName="If workitems page loaded" sap:VirtualizedContainerService.HintSize="755,402" sap2010:WorkflowViewState.IdRef="If_2">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <ui:LogMessage DisplayName="Success loading page workitems Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Extract Vendor ID success&quot;]" />
+                        </If.Then>
+                        <If.Else>
+                          <Sequence DisplayName="Invalid workitems page" sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Invalid work items pageMessage" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Error" Message="[&quot;Error in Extract vendor ID page&quot;]" />
+                            <Throw DisplayName="Throw error extracting TaxID" Exception="[New BusinessRuleException(&quot;Error in Extract vendor ID page&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
                   </Sequence>
                 </ActivityAction>
               </p:CVScope.Body>
@@ -182,94 +254,6 @@
                 <uc:CvCacheContainer>
                   <uc:CvCacheContainer.Caches>
                     <scg:List x:TypeArguments="uc:CVCache" Capacity="2">
-                      <uc:CVCache DisplayName="Screen CV Get Text - '' " Id="86364aa9-0c11-4f22-87fe-950b0d1aeb5c" InformativeScreenshot="061f68f613a5f2ea7d226cc09a414c9e" LogicalPosition="0, 71" OcrText="[ACMEISystemki] Ee (HED&#xA;Home / Work Items / Work ltem Details&#xA;| Generate Yearly Report for Vendor |&#xA;Vendor Information Work Item Details&#xA;TaxID: RO254678 WIID: 91325685&#xA;Name: Softioad Export Type: Generate Yearly Report&#xA;for Vendor&#xA;Address: Strada Lunga 189 status: Open&#xA;City: Brasov, Romania Date: 2017-08-09&#xA;[ &amp;* Update Work Item ]" Position="0, 71" ScreenshotGuid="ad781491-7737-44bc-ad22-91a42097d27a" ServerVersion="1">
-                        <uc:CVCache.CvUiElements>
-                          <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="32">
-                            <uc:CvElementInfo Category="Button" Region="564, 441, 159, 37" />
-                            <uc:CvElementInfo Category="Icon" Region="576, 449, 20, 20" />
-                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="67, 159, 1135, 37" />
-                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="179, 13, 17, 22" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="141, 370, 424, 19" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="143, 295, 435, 34" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="128, 350, 460, 21" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="143, 389, 422, 24" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="406, 378, 460, 28" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="552, 289, 567, 36" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="563, 325, 569, 24" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="133, 329, 435, 22" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="65, 147, 1056, 46" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="396, 374, 56, 51" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="510, 388, 619, 26" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="277, 234, 871, 42" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="548, 371, 584, 20" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="409, 349, 50, 90" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="446, 364, 417, 28" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="382, 398, 102, 17" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="388, 406, 98, 16" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="358, 397, 120, 102" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="385, 391, 102, 16" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="393, 390, 58, 52" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="386, 382, 104, 17" />
-                          </scg:List>
-                        </uc:CVCache.CvUiElements>
-                        <uc:CVCache.OcrTexts>
-                          <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="64">
-                            <uc:OcrTextInfo Region="50, 11, 150, 31" Text="[ACMEISystemki]" />
-                            <uc:OcrTextInfo Region="924, 11, 44, 30" Text="Ee" />
-                            <uc:OcrTextInfo Region="1151, 18, 52, 17" Text="(HED" />
-                            <uc:OcrTextInfo Region="77, 173, 36, 10" Text="Home" />
-                            <uc:OcrTextInfo Region="123, 173, 4, 10" Text="/" />
-                            <uc:OcrTextInfo Region="136, 173, 32, 10" Text="Work" />
-                            <uc:OcrTextInfo Region="173, 173, 35, 10" Text="Items" />
-                            <uc:OcrTextInfo Region="215, 173, 4, 10" Text="/" />
-                            <uc:OcrTextInfo Region="228, 173, 36, 10" Text="Work" />
-                            <uc:OcrTextInfo Region="265, 173, 28, 10" Text="ltem" />
-                            <uc:OcrTextInfo Region="296, 173, 42, 10" Text="Details" />
-                            <uc:OcrTextInfo Region="132, 237, 2, 40" Text="|" />
-                            <uc:OcrTextInfo Region="148, 252, 64, 10" Text="Generate" />
-                            <uc:OcrTextInfo Region="209, 252, 42, 13" Text="Yearly" />
-                            <uc:OcrTextInfo Region="253, 252, 42, 13" Text="Report" />
-                            <uc:OcrTextInfo Region="298, 252, 18, 10" Text="for" />
-                            <uc:OcrTextInfo Region="318, 252, 48, 10" Text="Vendor" />
-                            <uc:OcrTextInfo Region="1130, 237, 2, 40" Text="|" />
-                            <uc:OcrTextInfo Region="163, 305, 60, 13" Text="Vendor" />
-                            <uc:OcrTextInfo Region="226, 305, 88, 13" Text="Information" />
-                            <uc:OcrTextInfo Region="566, 305, 44, 13" Text="Work" />
-                            <uc:OcrTextInfo Region="614, 305, 36, 13" Text="Item" />
-                            <uc:OcrTextInfo Region="654, 305, 56, 13" Text="Details" />
-                            <uc:OcrTextInfo Region="164, 337, 42, 10" Text="TaxID:" />
-                            <uc:OcrTextInfo Region="209, 337, 72, 10" Text="RO254678" />
-                            <uc:OcrTextInfo Region="566, 337, 35, 10" Text="WIID:" />
-                            <uc:OcrTextInfo Region="606, 337, 64, 10" Text="91325685" />
-                            <uc:OcrTextInfo Region="163, 357, 45, 10" Text="Name:" />
-                            <uc:OcrTextInfo Region="210, 357, 56, 10" Text="Softioad" />
-                            <uc:OcrTextInfo Region="266, 357, 42, 13" Text="Export" />
-                            <uc:OcrTextInfo Region="567, 357, 35, 13" Text="Type:" />
-                            <uc:OcrTextInfo Region="607, 357, 64, 10" Text="Generate" />
-                            <uc:OcrTextInfo Region="668, 357, 42, 13" Text="Yearly" />
-                            <uc:OcrTextInfo Region="708, 347, 48, 30" Text="Report" />
-                            <uc:OcrTextInfo Region="756, 357, 18, 10" Text="for" />
-                            <uc:OcrTextInfo Region="776, 357, 48, 10" Text="Vendor" />
-                            <uc:OcrTextInfo Region="163, 377, 64, 10" Text="Address:" />
-                            <uc:OcrTextInfo Region="227, 377, 42, 10" Text="Strada" />
-                            <uc:OcrTextInfo Region="273, 377, 40, 13" Text="Lunga" />
-                            <uc:OcrTextInfo Region="316, 377, 24, 10" Text="189" />
-                            <uc:OcrTextInfo Region="567, 377, 49, 10" Text="status:" />
-                            <uc:OcrTextInfo Region="618, 377, 36, 13" Text="Open" />
-                            <uc:OcrTextInfo Region="163, 397, 30, 13" Text="City:" />
-                            <uc:OcrTextInfo Region="199, 397, 49, 12" Text="Brasov," />
-                            <uc:OcrTextInfo Region="249, 397, 56, 10" Text="Romania" />
-                            <uc:OcrTextInfo Region="567, 397, 35, 10" Text="Date:" />
-                            <uc:OcrTextInfo Region="605, 397, 80, 10" Text="2017-08-09" />
-                            <uc:OcrTextInfo Region="566, 443, 3, 32" Text="[" />
-                            <uc:OcrTextInfo Region="579, 452, 14, 14" Text="&amp;*" />
-                            <uc:OcrTextInfo Region="598, 454, 48, 13" Text="Update" />
-                            <uc:OcrTextInfo Region="646, 454, 36, 10" Text="Work" />
-                            <uc:OcrTextInfo Region="683, 454, 28, 10" Text="Item" />
-                            <uc:OcrTextInfo Region="719, 443, 3, 32" Text="]" />
-                          </scg:List>
-                        </uc:CVCache.OcrTexts>
-                      </uc:CVCache>
                       <uc:CVCache DisplayName="Main Screen" Id="8eb6a5ef-313a-4f38-b81b-1b60a3f00f23" InformativeScreenshot="6020aef354159faae027e6a48ac92ab8" LogicalPosition="0, 71" OcrText="[ACMEISystemki] (D  CEOEIERE  Mpem&#xA;Home / Work Items / Work ltem Details&#xA;| Generate Yearly Report for Vendor |&#xA;Vendor Information Work Item Details&#xA;Taxi: ROB74231 WIID: 91325677&#xA;Name: Copiers and More Type: Generate Yearly Report&#xA;for Vendor&#xA;Address: Strada Coplatoarelor 33 status: Open&#xA;City: Brasov, Romania Date: 2022-10-09&#xA;[ &amp;* Update Work Item ]&#xA;Convriaht ® 2023 ACME Systems." Position="0, 71" ScreenshotGuid="61945341-2975-46ba-8604-9a8f31333104" ServerVersion="1">
                         <uc:CVCache.CvUiElements>
                           <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="32">
@@ -389,183 +373,13 @@
               </sap:WorkflowViewStateService.ViewState>
             </p:CVScope>
           </Sequence>
-          <Sequence DisplayName="Exit Page validation" sap:VirtualizedContainerService.HintSize="831,965" sap2010:WorkflowViewState.IdRef="Sequence_7">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="5aehhMtY4g2iuEltqGUyepTZ6e4e+EpS8erhB7sk0hR9UqY41ifbtSA8pBDrm+pqLO38A274w118WWeNiZJEfw==" CvMethod="ElementDetection, OCR" DesignTimeCacheId="8eb6a5ef-313a-4f38-b81b-1b60a3f00f23" DisplayName="CV Screen Scope 'BODY'" sap:VirtualizedContainerService.HintSize="789,873" sap2010:WorkflowViewState.IdRef="CVScope_2" Version="V3">
-              <p:CVScope.Body>
-                <ActivityAction x:TypeArguments="x:Object">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                    <Sequence.Variables>
-                      <Variable x:TypeArguments="x:Boolean" Name="WIExists" />
-                    </Sequence.Variables>
-                    <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'Home / Work Items / Work ltem Details' (77,173,261,10)&quot;]" DesignTimeCacheId="8eb6a5ef-313a-4f38-b81b-1b60a3f00f23" DesignTimeScaleFactor="1" DisplayName="CV Element Exists - Text" sap:VirtualizedContainerService.HintSize="755,136" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_1" InformativeScreenshot="d19a6f39f6b91120c2753bd75657cc9a" Result="[WIExists]" Version="V3">
-                      <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
-                        <uc:CvDescriptor>
-                          <uc:CvDescriptor.Target>
-                            <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="77, 173, 261, 10" ElementType="Text" Text="Home / Work Items / Work ltem Details" />
-                          </uc:CvDescriptor.Target>
-                        </uc:CvDescriptor>
-                      </p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
-                    </p:CvElementExistsWithDescriptor>
-                    <If Condition="[WIExists]" sap:VirtualizedContainerService.HintSize="755,402" sap2010:WorkflowViewState.IdRef="If_2">
-                      <If.Then>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Extract Vendor ID success&quot;]" />
-                      </If.Then>
-                      <If.Else>
-                        <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_12">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Error" Message="[&quot;Error in Extract vendor ID page&quot;]" />
-                          <Throw Exception="[New BusinessRuleException(&quot;Error in Extract vendor ID page&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
-                        </Sequence>
-                      </If.Else>
-                    </If>
-                  </Sequence>
-                </ActivityAction>
-              </p:CVScope.Body>
-              <p:CVScope.DesignTimeCache>
-                <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" />
-              </p:CVScope.DesignTimeCache>
-              <p:CVScope.DesignTimeCacheContainer>
-                <uc:CvCacheContainer>
-                  <uc:CvCacheContainer.Caches>
-                    <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
-                      <uc:CVCache DisplayName="Screen CV Element Exists - 'Ho (Main)" Id="8eb6a5ef-313a-4f38-b81b-1b60a3f00f23" InformativeScreenshot="6020aef354159faae027e6a48ac92ab8" LogicalPosition="0, 71" OcrText="[ACMEISystemki] (D  CEOEIERE  Mpem&#xA;Home / Work Items / Work ltem Details&#xA;| Generate Yearly Report for Vendor |&#xA;Vendor Information Work Item Details&#xA;Taxi: ROB74231 WIID: 91325677&#xA;Name: Copiers and More Type: Generate Yearly Report&#xA;for Vendor&#xA;Address: Strada Coplatoarelor 33 status: Open&#xA;City: Brasov, Romania Date: 2022-10-09&#xA;[ &amp;* Update Work Item ]&#xA;Convriaht ® 2023 ACME Systems." Position="0, 71" ScreenshotGuid="61945341-2975-46ba-8604-9a8f31333104" ServerVersion="1">
-                        <uc:CVCache.CvUiElements>
-                          <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="32">
-                            <uc:CvElementInfo Category="Button" Region="565, 441, 158, 36" />
-                            <uc:CvElementInfo Category="Icon" Region="575, 449, 20, 20" />
-                            <uc:CvElementInfo Category="InputBox" Region="126, 534, 1008, 40" />
-                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="88, 159, 1116, 36" />
-                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="565, 441, 157, 36" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="140, 327, 362, 41" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="139, 297, 426, 32" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="128, 390, 432, 22" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="110, 275, 464, 24" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="532, 290, 600, 37" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="715, 275, 404, 27" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="242, 234, 858, 42" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="132, 291, 230, 37" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="534, 327, 598, 23" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="194, 578, 794, 30" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="452, 275, 604, 43" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1049, 496, 82, 72" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="249, 279, 889, 67" />
-                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="129, 269, 396, 236" />
-                          </scg:List>
-                        </uc:CVCache.CvUiElements>
-                        <uc:CVCache.OcrTexts>
-                          <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="64">
-                            <uc:OcrTextInfo Region="50, 11, 150, 31" Text="[ACMEISystemki]" />
-                            <uc:OcrTextInfo Region="924, 18, 40, 14" Text="(D" />
-                            <uc:OcrTextInfo Region="993, 20, 135, 10" Text=" CEOEIERE" />
-                            <uc:OcrTextInfo Region="1151, 18, 55, 17" Text=" Mpem" />
-                            <uc:OcrTextInfo Region="77, 173, 36, 10" Text="Home" />
-                            <uc:OcrTextInfo Region="123, 173, 4, 10" Text="/" />
-                            <uc:OcrTextInfo Region="136, 173, 32, 10" Text="Work" />
-                            <uc:OcrTextInfo Region="173, 173, 35, 10" Text="Items" />
-                            <uc:OcrTextInfo Region="215, 173, 4, 10" Text="/" />
-                            <uc:OcrTextInfo Region="228, 173, 36, 10" Text="Work" />
-                            <uc:OcrTextInfo Region="265, 173, 28, 10" Text="ltem" />
-                            <uc:OcrTextInfo Region="296, 173, 42, 10" Text="Details" />
-                            <uc:OcrTextInfo Region="132, 237, 2, 40" Text="|" />
-                            <uc:OcrTextInfo Region="148, 252, 64, 10" Text="Generate" />
-                            <uc:OcrTextInfo Region="209, 252, 42, 13" Text="Yearly" />
-                            <uc:OcrTextInfo Region="253, 252, 42, 13" Text="Report" />
-                            <uc:OcrTextInfo Region="298, 252, 18, 10" Text="for" />
-                            <uc:OcrTextInfo Region="318, 252, 48, 10" Text="Vendor" />
-                            <uc:OcrTextInfo Region="1130, 237, 2, 40" Text="|" />
-                            <uc:OcrTextInfo Region="163, 305, 60, 13" Text="Vendor" />
-                            <uc:OcrTextInfo Region="226, 305, 88, 13" Text="Information" />
-                            <uc:OcrTextInfo Region="566, 305, 44, 13" Text="Work" />
-                            <uc:OcrTextInfo Region="614, 305, 36, 13" Text="Item" />
-                            <uc:OcrTextInfo Region="654, 305, 56, 13" Text="Details" />
-                            <uc:OcrTextInfo Region="164, 337, 40, 10" Text="Taxi:" />
-                            <uc:OcrTextInfo Region="209, 337, 72, 10" Text="ROB74231" />
-                            <uc:OcrTextInfo Region="566, 337, 35, 10" Text="WIID:" />
-                            <uc:OcrTextInfo Region="606, 337, 64, 10" Text="91325677" />
-                            <uc:OcrTextInfo Region="163, 357, 45, 10" Text="Name:" />
-                            <uc:OcrTextInfo Region="210, 357, 49, 13" Text="Copiers" />
-                            <uc:OcrTextInfo Region="262, 357, 24, 10" Text="and" />
-                            <uc:OcrTextInfo Region="289, 357, 32, 10" Text="More" />
-                            <uc:OcrTextInfo Region="567, 357, 35, 13" Text="Type:" />
-                            <uc:OcrTextInfo Region="607, 357, 64, 10" Text="Generate" />
-                            <uc:OcrTextInfo Region="668, 357, 42, 13" Text="Yearly" />
-                            <uc:OcrTextInfo Region="708, 347, 48, 30" Text="Report" />
-                            <uc:OcrTextInfo Region="756, 357, 18, 10" Text="for" />
-                            <uc:OcrTextInfo Region="776, 357, 48, 10" Text="Vendor" />
-                            <uc:OcrTextInfo Region="163, 377, 64, 10" Text="Address:" />
-                            <uc:OcrTextInfo Region="227, 377, 42, 10" Text="Strada" />
-                            <uc:OcrTextInfo Region="273, 377, 91, 13" Text="Coplatoarelor" />
-                            <uc:OcrTextInfo Region="361, 377, 14, 10" Text="33" />
-                            <uc:OcrTextInfo Region="567, 377, 49, 10" Text="status:" />
-                            <uc:OcrTextInfo Region="618, 377, 36, 13" Text="Open" />
-                            <uc:OcrTextInfo Region="163, 397, 30, 13" Text="City:" />
-                            <uc:OcrTextInfo Region="199, 397, 49, 12" Text="Brasov," />
-                            <uc:OcrTextInfo Region="249, 397, 56, 10" Text="Romania" />
-                            <uc:OcrTextInfo Region="567, 397, 35, 10" Text="Date:" />
-                            <uc:OcrTextInfo Region="605, 397, 80, 10" Text="2022-10-09" />
-                            <uc:OcrTextInfo Region="566, 443, 3, 32" Text="[" />
-                            <uc:OcrTextInfo Region="579, 452, 14, 14" Text="&amp;*" />
-                            <uc:OcrTextInfo Region="598, 454, 48, 13" Text="Update" />
-                            <uc:OcrTextInfo Region="646, 454, 36, 10" Text="Work" />
-                            <uc:OcrTextInfo Region="683, 454, 28, 10" Text="Item" />
-                            <uc:OcrTextInfo Region="719, 443, 3, 32" Text="]" />
-                            <uc:OcrTextInfo Region="132, 598, 63, 11" Text="Convriaht" />
-                            <uc:OcrTextInfo Region="195, 598, 11, 10" Text="®" />
-                            <uc:OcrTextInfo Region="210, 598, 32, 10" Text="2023" />
-                            <uc:OcrTextInfo Region="244, 598, 40, 10" Text="ACME" />
-                            <uc:OcrTextInfo Region="288, 598, 56, 11" Text="Systems." />
-                          </scg:List>
-                        </uc:CVCache.OcrTexts>
-                      </uc:CVCache>
-                    </scg:List>
-                  </uc:CvCacheContainer.Caches>
-                </uc:CvCacheContainer>
-              </p:CVScope.DesignTimeCacheContainer>
-              <p:CVScope.OCREngine>
-                <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
-                  <ActivityFunc.Argument>
-                    <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
-                  </ActivityFunc.Argument>
-                  <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GoogleOCR_2" Image="[Image]" />
-                </ActivityFunc>
-              </p:CVScope.OCREngine>
-              <p:CVScope.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="651ea658-7228-4d12-af4a-9d9d393751c4" InformativeScreenshot="b1be5e46dd58e657e95b8b32c5e00843" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Work Items' /&gt;&lt;webctrl tag='BODY' /&gt;" WaitForReady="INTERACTIVE">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                </ui:Target>
-              </p:CVScope.Target>
-              <p:CVScope.UseLocalServer>
-                <InArgument x:TypeArguments="x:Boolean" />
-              </p:CVScope.UseLocalServer>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </p:CVScope>
-          </Sequence>
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="877,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,314" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -573,19 +387,19 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="Exception Sequence" sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Error in Report extract vendor ID&quot;]" />
-              <Throw Exception="[New BusinessRuleException(&quot;Error in Report extract vendor ID&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+              <ui:LogMessage DisplayName="Exception Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Error in Report extract vendor ID&quot;]" />
+              <Rethrow DisplayName="Rethrow extract TaxID exception" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
             </Sequence>
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="911,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Reports Extract vendor ID ended&quot;]" />
+    <ui:LogMessage DisplayName="End Message" sap:VirtualizedContainerService.HintSize="953,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Reports Extract vendor ID ended&quot;]" />
   </Sequence>
 </Activity>
