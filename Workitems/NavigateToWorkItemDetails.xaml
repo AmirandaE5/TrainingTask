@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1152,2326</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1152,982</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>NavigateToWorkItemDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -87,9 +87,10 @@
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="It will navigate into the work item details accoring to the ID given&#xA;" DisplayName="NavigateToWorkItemDetails" sap:VirtualizedContainerService.HintSize="959,2261" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="It will navigate into the work item details accoring to the ID given&#xA;" DisplayName="NavigateToWorkItemDetails" sap:VirtualizedContainerService.HintSize="552,917" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="https://acme-test.uipath.com/work-items/" Name="AcmeUrl" />
     </Sequence.Variables>
@@ -99,60 +100,93 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="897,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Navigate to work items details started&quot;]" />
-    <TryCatch DisplayName="Navitgate to workitem details" sap:VirtualizedContainerService.HintSize="897,1845" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Start Message" sap:VirtualizedContainerService.HintSize="490,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Navigate to work items details started&quot;]" />
+    <TryCatch DisplayName="Navitgate to workitem details" sap:VirtualizedContainerService.HintSize="490,500" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="859,1617" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence DisplayName="Navigating to WI details" sap:VirtualizedContainerService.HintSize="1049,2911" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Input Validation" sap:VirtualizedContainerService.HintSize="797,495" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Input Validation" sap:VirtualizedContainerService.HintSize="987,539" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[String.IsNullOrEmpty(WorkItemID)]" sap:VirtualizedContainerService.HintSize="755,403" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[String.IsNullOrEmpty(WorkItemID)]" DisplayName="Check If Workitem is valid" sap:VirtualizedContainerService.HintSize="829,428" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <Sequence DisplayName="Workitem invalid" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Credential error Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;Error getting WorkItemID&quot;]" />
-                  <Throw DisplayName="Error getting WorkItemID" Exception="[New BusinessRuleException(&quot;Error getting WorkItemID&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                  <ui:LogMessage DisplayName="Workitem invalid error Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;Error getting WorkItemID&quot;]" />
+                  <Throw DisplayName="Error getting WorkItemID" Exception="[New BusinessRuleException(&quot;Error getting WorkItemID&quot;)]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Throw_2" />
                 </Sequence>
               </If.Then>
               <If.Else>
-                <ui:LogMessage DisplayName="Credential success Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;WorkItemID retrieved correctly&quot;]" />
+                <ui:LogMessage DisplayName="Workitem success Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;WorkItemID retrieved correctly&quot;]" />
               </If.Else>
             </If>
           </Sequence>
-          <Sequence DisplayName="Landing page validation" sap:VirtualizedContainerService.HintSize="797,83" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Navigate to work item details" sap:VirtualizedContainerService.HintSize="987,2221" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-          </Sequence>
-          <Sequence DisplayName="Navigate to work item details" sap:VirtualizedContainerService.HintSize="797,725" sap2010:WorkflowViewState.IdRef="Sequence_6">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="5aehhMtY4g2iuEltqGUyepTZ6e4e+EpS8erhB7sk0hR9UqY41ifbtSA8pBDrm+pqLO38A274w118WWeNiZJEfw==" CvMethod="ElementDetection, OCR" DesignTimeCacheId="154db6f5-c9a7-4988-802a-8222dae748f6" DisplayName="CV Screen Scope 'chrome.exe ACME'" sap:VirtualizedContainerService.HintSize="434,633" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V3">
+            <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="5aehhMtY4g2iuEltqGUyepTZ6e4e+EpS8erhB7sk0hR9UqY41ifbtSA8pBDrm+pqLO38A274w118WWeNiZJEfw==" CvMethod="ElementDetection, OCR" DesignTimeCacheId="154db6f5-c9a7-4988-802a-8222dae748f6" DisplayName="CV Screen Scope 'chrome.exe ACME'" sap:VirtualizedContainerService.HintSize="925,2110" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V3">
               <p:CVScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                   </ActivityAction.Argument>
                   <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                    <p:CvTypeIntoWithDescriptor DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (105,36,1036,30)&quot;]" DesignTimeCacheId="90387567-c788-4c81-b305-131bee256a5d" DesignTimeScaleFactor="1" DisplayName="Navigate to work item details" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,184" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_1" InformativeScreenshot="3c031199a1b57955edf6bcf019c8b289" Text="[AcmeUrl + WorkItemID]" Version="V3">
+                    <Sequence DisplayName="Landing page validation" sap:VirtualizedContainerService.HintSize="891,714" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:Boolean" Name="WorkItemsExists" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'items.' (327,169,36,10)&quot; +&#xD;&#xA;&quot;Anchor: Text 'They need to be completed in the order specified by your manager.' (367,169,414,13)&quot;]" DesignTimeCacheId="154db6f5-c9a7-4988-802a-8222dae748f6" DesignTimeScaleFactor="1" DisplayName="Workitem table exists?" sap:VirtualizedContainerService.HintSize="829,137" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_1" InformativeScreenshot="cf51a22ecc58482d78332ba4d3218cc6" Result="[WorkItemsExists]" Version="V3">
+                        <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                          <uc:CvDescriptor>
+                            <uc:CvDescriptor.Anchors>
+                              <x:Array Type="uc:CvElementDescriptor">
+                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="367, 169, 414, 13" ElementType="Text" Text="They need to be completed in the order specified by your manager." />
+                              </x:Array>
+                            </uc:CvDescriptor.Anchors>
+                            <uc:CvDescriptor.Target>
+                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="327, 169, 36, 10" ElementType="Text" Text="items." />
+                            </uc:CvDescriptor.Target>
+                          </uc:CvDescriptor>
+                        </p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                      </p:CvElementExistsWithDescriptor>
+                      <If Condition="[WorkItemsExists]" DisplayName="Check if workitems table valid" sap:VirtualizedContainerService.HintSize="829,426" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If.Then>
+                          <ui:LogMessage DisplayName="Valid workitems page Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Workitems page valid&quot;]" />
+                        </If.Then>
+                        <If.Else>
+                          <Sequence DisplayName="Workitems error" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Workitems invalid Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Error" Message="[&quot;Workitems page invalid&quot;]" />
+                            <Throw DisplayName="Throw workitems page invalid" Exception="[New BusinessRuleException(&quot;Workitems page error&quot;)]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                    <p:CvTypeIntoWithDescriptor DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (105,36,1036,30)&quot;]" DesignTimeCacheId="90387567-c788-4c81-b305-131bee256a5d" DesignTimeScaleFactor="1" DisplayName="Navigate to work item details" EmptyField="True" sap:VirtualizedContainerService.HintSize="891,185" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_1" InformativeScreenshot="3c031199a1b57955edf6bcf019c8b289" Text="[AcmeUrl + WorkItemID]" Version="V3">
                       <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
                         <uc:CvDescriptor>
                           <uc:CvDescriptor.Target>
@@ -171,7 +205,7 @@
                         </ui:Target>
                       </p:CvTypeIntoWithDescriptor.Target>
                     </p:CvTypeIntoWithDescriptor>
-                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="400,114" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
+                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="891,115" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
                       <ui:SendHotkey.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="05be5294-40ce-46f1-bec5-9ab515535abd">
                           <ui:Target.TimeoutMS>
@@ -183,6 +217,47 @@
                         </ui:Target>
                       </ui:SendHotkey.Target>
                     </ui:SendHotkey>
+                    <Sequence DisplayName="Exit page validation" sap:VirtualizedContainerService.HintSize="891,714" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:Boolean" Name="WorkItemsExists" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'items.' (327,169,36,10)&quot; +&#xA;&quot;Anchor: Text 'They need to be completed in the order specified by your manager.' (367,169,414,13)&quot;]" DesignTimeCacheId="154db6f5-c9a7-4988-802a-8222dae748f6" DesignTimeScaleFactor="1" DisplayName="Workitem table exists?" sap:VirtualizedContainerService.HintSize="829,137" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_2" InformativeScreenshot="cf51a22ecc58482d78332ba4d3218cc6" Result="[WorkItemsExists]" Version="V3">
+                        <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                          <uc:CvDescriptor>
+                            <uc:CvDescriptor.Anchors>
+                              <x:Array Type="uc:CvElementDescriptor">
+                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="367, 169, 414, 13" ElementType="Text" Text="They need to be completed in the order specified by your manager." />
+                              </x:Array>
+                            </uc:CvDescriptor.Anchors>
+                            <uc:CvDescriptor.Target>
+                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="327, 169, 36, 10" ElementType="Text" Text="items." />
+                            </uc:CvDescriptor.Target>
+                          </uc:CvDescriptor>
+                        </p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                      </p:CvElementExistsWithDescriptor>
+                      <If Condition="[WorkItemsExists]" DisplayName="Check if workitems table valid" sap:VirtualizedContainerService.HintSize="829,426" sap2010:WorkflowViewState.IdRef="If_3">
+                        <If.Then>
+                          <ui:LogMessage DisplayName="Valid workitems page Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Workitems page valid&quot;]" />
+                        </If.Then>
+                        <If.Else>
+                          <Sequence DisplayName="Workitems error" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Workitems invalid Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Error" Message="[&quot;Workitems page invalid&quot;]" />
+                            <Throw DisplayName="Throw workitems page invalid" Exception="[New BusinessRuleException(&quot;Workitems page error&quot;)]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
                   </Sequence>
                 </ActivityAction>
               </p:CVScope.Body>
@@ -541,7 +616,7 @@
                           </scg:List>
                         </uc:CVCache.OcrTexts>
                       </uc:CVCache>
-                      <uc:CVCache DisplayName="Main Screen" Id="154db6f5-c9a7-4988-802a-8222dae748f6" InformativeScreenshot="32cac68b3c6e04bd418dae60826eab52" LogicalPosition="0, 0" OcrText="J [Fl ACME System 1- Work ftems ~~ X 1 + v= x&#xA;€ &gt; C¢ @ acme-testuipathcom/work-items 2% » 0@ :&#xA;ACNE EEE 1 fron) wen I&#xA;| Searcn Resuts&#xA;| Please find below your work items. They need to be completed&#xA;in the order specified by your manager. |&#xA;| Actions win Description Type status Date |&#xA;| (@)®) 91325670 Calculate Client Security Hash wis Open 2020-08-07 |&#xA;| (@)®) 91325753 Verify Account Position wit Open 2018-01-16 |&#xA;| @E 91325756 Verify Account Position wit Open 2019-02-15 |&#xA;| JE 91325692 Process Vendor Invoice wiz Open 2021-09-08 |&#xA;| JE 91325744 Verify Account Position wi Open 2019-06-23 |&#xA;| @E 91325668 Calculate Client Security Hash wis Open 2022-07-01 |&#xA;| (@)®) 91325747 Verify Account Position wit Open 2022-05-02 |&#xA;| @E 91325741 Verify Account Position wit Open 2021-10-15 |&#xA;| (@)®) 91325705 Research Client Check Copy wiz Open 2017-01-06 |&#xA;(@)®) 91325702 Research Client Check Copy wiz Open 2020-10-18 |&#xA;2% 3h (4h iB: (BE {73 8} {9} 0 &gt; ." Position="0, 0" ScreenshotGuid="89ef3fdb-9a57-4038-8ced-c5d3214c247f" ServerVersion="1">
+                      <uc:CVCache DisplayName="Screen CV Element Exists - 'it (Main)" Id="154db6f5-c9a7-4988-802a-8222dae748f6" InformativeScreenshot="32cac68b3c6e04bd418dae60826eab52" LogicalPosition="0, 0" OcrText="J [Fl ACME System 1- Work ftems ~~ X 1 + v= x&#xA;€ &gt; C¢ @ acme-testuipathcom/work-items 2% » 0@ :&#xA;ACNE EEE 1 fron) wen I&#xA;| Searcn Resuts&#xA;| Please find below your work items. They need to be completed&#xA;in the order specified by your manager. |&#xA;| Actions win Description Type status Date |&#xA;| (@)®) 91325670 Calculate Client Security Hash wis Open 2020-08-07 |&#xA;| (@)®) 91325753 Verify Account Position wit Open 2018-01-16 |&#xA;| @E 91325756 Verify Account Position wit Open 2019-02-15 |&#xA;| JE 91325692 Process Vendor Invoice wiz Open 2021-09-08 |&#xA;| JE 91325744 Verify Account Position wi Open 2019-06-23 |&#xA;| @E 91325668 Calculate Client Security Hash wis Open 2022-07-01 |&#xA;| (@)®) 91325747 Verify Account Position wit Open 2022-05-02 |&#xA;| @E 91325741 Verify Account Position wit Open 2021-10-15 |&#xA;| (@)®) 91325705 Research Client Check Copy wiz Open 2017-01-06 |&#xA;(@)®) 91325702 Research Client Check Copy wiz Open 2020-10-18 |&#xA;2% 3h (4h iB: (BE {73 8} {9} 0 &gt; ." Position="0, 0" ScreenshotGuid="89ef3fdb-9a57-4038-8ced-c5d3214c247f" ServerVersion="1">
                         <uc:CVCache.CvTables>
                           <x:Array Type="uc:CvTableInfo">
                             <uc:CvTableInfo>
@@ -934,7 +1009,7 @@
                   <ActivityFunc.Argument>
                     <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
                   </ActivityFunc.Argument>
-                  <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GoogleOCR_1" Image="[Image]" />
+                  <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="GoogleOCR_1" Image="[Image]" />
                 </ActivityFunc>
               </p:CVScope.OCREngine>
               <p:CVScope.Target>
@@ -955,20 +1030,13 @@
               </sap:WorkflowViewStateService.ViewState>
             </p:CVScope>
           </Sequence>
-          <Sequence DisplayName="Exit Page validation" sap:VirtualizedContainerService.HintSize="797,83" sap2010:WorkflowViewState.IdRef="Sequence_7">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </Sequence>
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="843,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="456,337" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -976,19 +1044,19 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="Exception Sequence" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Error in Navigate to Work Item Details&quot;]" />
-              <Throw Exception="[New BusinessRuleException(&quot;Error in Navigate to Work Item Details&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+              <ui:LogMessage DisplayName="Exception Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Error in Navigate to Work Item Details&quot;]" />
+              <Rethrow DisplayName="Rethrow error navigating to workitem details" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
             </Sequence>
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="877,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Navigate to work item details ended&quot;]" />
+    <ui:LogMessage DisplayName="End Message" sap:VirtualizedContainerService.HintSize="490,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Navigate to work item details ended&quot;]" />
   </Sequence>
 </Activity>
