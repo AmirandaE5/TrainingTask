@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="NavigateToDashboard" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="985,2615" sap2010:WorkflowViewState.IdRef="NavigateToDashboard_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="NavigateToDashboard" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1193,2791" sap2010:WorkflowViewState.IdRef="NavigateToDashboard_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
       <x:String>System.Activities</x:String>
@@ -77,10 +77,10 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="It will navigate to dashboard main page&#xA;" DisplayName="NavigateToDashboard" sap:VirtualizedContainerService.HintSize="995,2550" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="It will navigate to dashboard main page&#xA;" DisplayName="NavigateToDashboard" sap:VirtualizedContainerService.HintSize="1203,2726" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="DashboardExists" />
       <Variable x:TypeArguments="x:Boolean" Name="AcmeSystemExists" />
@@ -91,37 +91,44 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Start Message" sap:VirtualizedContainerService.HintSize="953,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Navigate to dashboard started&quot;]" />
-    <TryCatch DisplayName="Navigate to dashboard " sap:VirtualizedContainerService.HintSize="953,2154" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Start Message" sap:VirtualizedContainerService.HintSize="1141,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Navigate to dashboard started&quot;]" />
+    <TryCatch DisplayName="Navigate to dashboard " sap:VirtualizedContainerService.HintSize="1141,2309" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Navigating to ACME dashboard" sap:VirtualizedContainerService.HintSize="915,1927" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence DisplayName="Navigating to ACME dashboard" sap:VirtualizedContainerService.HintSize="1103,2081" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Landing page validation" sap:VirtualizedContainerService.HintSize="873,1835" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Landing page validation" sap:VirtualizedContainerService.HintSize="1041,1970" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="5aehhMtY4g2iuEltqGUyepTZ6e4e+EpS8erhB7sk0hR9UqY41ifbtSA8pBDrm+pqLO38A274w118WWeNiZJEfw==" CvMethod="ElementDetection, OCR" DesignTimeCacheId="6d724edd-71e4-4ad5-a8a5-bece565c54b7" DisplayName="CV Screen Scope Dashboard" sap:VirtualizedContainerService.HintSize="831,1743" sap2010:WorkflowViewState.IdRef="CVScope_3" Version="V3">
+            <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="5aehhMtY4g2iuEltqGUyepTZ6e4e+EpS8erhB7sk0hR9UqY41ifbtSA8pBDrm+pqLO38A274w118WWeNiZJEfw==" CvMethod="ElementDetection, OCR" DesignTimeCacheId="6d724edd-71e4-4ad5-a8a5-bece565c54b7" DisplayName="CV Screen Scope Dashboard" sap:VirtualizedContainerService.HintSize="979,1859" sap2010:WorkflowViewState.IdRef="CVScope_3" Version="V3">
               <p:CVScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                   </ActivityAction.Argument>
                   <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                    <Sequence DisplayName="Input validation" sap:VirtualizedContainerService.HintSize="797,228" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <Sequence DisplayName="Input validation" sap:VirtualizedContainerService.HintSize="945,248" sap2010:WorkflowViewState.IdRef="Sequence_9">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'AEE SEED 9' (48,11,145,32)&quot;]" DesignTimeCacheId="42445468-afc8-4a05-8f76-b751da6f2337" DesignTimeScaleFactor="1" DisplayName="Acme system dashboard exists?" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_1" InformativeScreenshot="5fe2b7c678550d32c9ea72ae360a44c4" Result="[AcmeSystemExists]" Version="V3">
+                      <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'AEE SEED 9' (48,11,145,32)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Dashboard' (64,96,171,26)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Em' (925,11,32,31)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Home / Dashboard' (77,173,132,10)&quot;]" DesignTimeCacheId="5e1ec2a9-0458-463b-b007-744385c1cde7" DesignTimeScaleFactor="1" DisplayName="Acme link exists?" sap:VirtualizedContainerService.HintSize="388,137" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_1" InformativeScreenshot="fbc62bac1ac3c66ac8c944d47a9f0a94" Result="[AcmeSystemExists]" Version="V3">
                         <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                           <uc:CvDescriptor>
+                            <uc:CvDescriptor.Anchors>
+                              <x:Array Type="uc:CvElementDescriptor">
+                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="64, 96, 171, 26" ElementType="Text" Text="Dashboard" />
+                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="925, 11, 32, 31" ElementType="Text" Text="Em" />
+                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="77, 173, 132, 10" ElementType="Text" Text="Home / Dashboard" />
+                              </x:Array>
+                            </uc:CvDescriptor.Anchors>
                             <uc:CvDescriptor.Target>
                               <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="48, 11, 145, 32" ElementType="Text" Text="AEE SEED 9" />
                             </uc:CvDescriptor.Target>
@@ -129,17 +136,17 @@
                         </p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                       </p:CvElementExistsWithDescriptor>
                     </Sequence>
-                    <If Condition="[AcmeSystemExists]" DisplayName="Check If dashboard exists" sap:VirtualizedContainerService.HintSize="797,486" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If Condition="[AcmeSystemExists]" DisplayName="Check If dashboard exists" sap:VirtualizedContainerService.HintSize="945,538" sap2010:WorkflowViewState.IdRef="If_1">
                       <If.Then>
-                        <Sequence DisplayName="Dashboard exists" sap:VirtualizedContainerService.HintSize="376,329" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                        <Sequence DisplayName="Dashboard exists" sap:VirtualizedContainerService.HintSize="450,380" sap2010:WorkflowViewState.IdRef="Sequence_18">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Dashboard exists message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Already in System1&quot;]" />
-                          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click on system1 link button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
-                            <ui:Click.CursorPosition>
+                          <ui:LogMessage DisplayName="Dashboard exists message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Already in System1&quot;]" />
+                          <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'Em' (925,11,32,31)&quot; +&#xD;&#xA;&quot;Anchor: Text 'AEE SEED 9' (48,11,145,32)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Dashboard' (64,96,171,26)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Home / Dashboard' (77,173,132,10)&quot;]" DesignTimeCacheId="720ab8c2-81d9-41f8-8192-27903f980c3a" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="388,137" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_1" InformativeScreenshot="e02d5ffa65bbb473acaa074e01f0e958" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                            <p:CvClickWithDescriptor.CursorPosition>
                               <ui:CursorPosition Position="Center">
                                 <ui:CursorPosition.OffsetX>
                                   <InArgument x:TypeArguments="x:Int32" />
@@ -148,9 +155,23 @@
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:CursorPosition.OffsetY>
                               </ui:CursorPosition>
-                            </ui:Click.CursorPosition>
-                            <ui:Click.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2604f032-9018-48b9-9b53-117cd050c3cf" InformativeScreenshot="cfae584c225d3c1a073d471479f8ad9d" Selector="&lt;html app='chrome.exe' title='ACME System 1 - *' /&gt;&lt;webctrl tag='A' /&gt;">
+                            </p:CvClickWithDescriptor.CursorPosition>
+                            <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                              <uc:CvDescriptor>
+                                <uc:CvDescriptor.Anchors>
+                                  <x:Array Type="uc:CvElementDescriptor">
+                                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="48, 11, 145, 32" ElementType="Text" Text="AEE SEED 9" />
+                                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="64, 96, 171, 26" ElementType="Text" Text="Dashboard" />
+                                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="77, 173, 132, 10" ElementType="Text" Text="Home / Dashboard" />
+                                  </x:Array>
+                                </uc:CvDescriptor.Anchors>
+                                <uc:CvDescriptor.Target>
+                                  <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="925, 11, 32, 31" ElementType="Text" Text="Em" />
+                                </uc:CvDescriptor.Target>
+                              </uc:CvDescriptor>
+                            </p:CvClickWithDescriptor.DesignTimeDescriptor>
+                            <p:CvClickWithDescriptor.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2e539275-08c8-4205-8d2b-5e15a48cb2b2">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
@@ -158,30 +179,30 @@
                                   <InArgument x:TypeArguments="ui:WaitForReady" />
                                 </ui:Target.WaitForReady>
                               </ui:Target>
-                            </ui:Click.Target>
-                          </ui:Click>
+                            </p:CvClickWithDescriptor.Target>
+                          </p:CvClickWithDescriptor>
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence DisplayName="Not exist" sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <Sequence DisplayName="Not exist" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_11">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Error Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;Error navigating in System1&quot;]" />
-                          <Throw DisplayName="Throw error in navigate to dashboard" Exception="[New BusinessRuleException(&quot;Error navigating in System1&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                          <ui:LogMessage DisplayName="Error Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;Error navigating in System1&quot;]" />
+                          <Throw DisplayName="Throw error in navigate to dashboard" Exception="[New BusinessRuleException(&quot;Error navigating in System1&quot;)]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Throw_2" />
                         </Sequence>
                       </If.Else>
                     </If>
-                    <Sequence DisplayName="Exit page validation" sap:VirtualizedContainerService.HintSize="797,670" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence DisplayName="Exit page validation" sap:VirtualizedContainerService.HintSize="945,714" sap2010:WorkflowViewState.IdRef="Sequence_5">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'Dashboard' (64,96,171,26)&quot; +&#xA;&quot;Anchor: Text 'AEE SEED 9' (48,11,145,32)&quot;]" DesignTimeCacheId="782088f4-8fd8-4ed9-bf8e-1a9a8886ca46" DesignTimeScaleFactor="1" DisplayName="Dashboard page exists?" sap:VirtualizedContainerService.HintSize="755,136" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_2" InformativeScreenshot="15f19d3a1730302072efbbfa16410d09" Result="[DashboardExists]" Version="V3">
+                      <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'Dashboard' (64,96,171,26)&quot; +&#xA;&quot;Anchor: Text 'AEE SEED 9' (48,11,145,32)&quot;]" DesignTimeCacheId="782088f4-8fd8-4ed9-bf8e-1a9a8886ca46" DesignTimeScaleFactor="1" DisplayName="Dashboard page exists?" sap:VirtualizedContainerService.HintSize="829,137" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_2" InformativeScreenshot="15f19d3a1730302072efbbfa16410d09" Result="[DashboardExists]" Version="V3">
                         <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                           <uc:CvDescriptor>
                             <uc:CvDescriptor.Anchors>
@@ -195,7 +216,7 @@
                           </uc:CvDescriptor>
                         </p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                       </p:CvElementExistsWithDescriptor>
-                      <If Condition="[DashboardExists]" DisplayName="Check If dashboard page loaded" sap:VirtualizedContainerService.HintSize="755,402" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If Condition="[DashboardExists]" DisplayName="Check If dashboard page loaded" sap:VirtualizedContainerService.HintSize="829,426" sap2010:WorkflowViewState.IdRef="If_2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -203,17 +224,17 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
-                          <ui:LogMessage DisplayName="Success dashboard navigation" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Successfully navigate to dashboard&quot;]" />
+                          <ui:LogMessage DisplayName="Success dashboard navigation" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Successfully navigate to dashboard&quot;]" />
                         </If.Then>
                         <If.Else>
-                          <Sequence DisplayName="Error navigating dashboard" sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                          <Sequence DisplayName="Error navigating dashboard" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_12">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="error navigating dashboard" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[&quot;Error navigating to dashboard&quot;]" />
-                            <Throw DisplayName="Throw error navigating dashboard" Exception="[New BusinessRuleException(&quot;Error navigating to dashboard&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                            <ui:LogMessage DisplayName="error navigating dashboard" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[&quot;Error navigating to dashboard&quot;]" />
+                            <Throw DisplayName="Throw error navigating dashboard" Exception="[New BusinessRuleException(&quot;Error navigating to dashboard&quot;)]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Throw_3" />
                           </Sequence>
                         </If.Else>
                       </If>
@@ -228,24 +249,7 @@
                 <uc:CvCacheContainer>
                   <uc:CvCacheContainer.Caches>
                     <scg:List x:TypeArguments="uc:CVCache" Capacity="4">
-                      <uc:CVCache DisplayName="Screen CV Element Exists - 'AE " Id="42445468-afc8-4a05-8f76-b751da6f2337" InformativeScreenshot="de998de2bd331c844f7d22e1d68e33fd" LogicalPosition="0, 71" OcrText="AEE SEED 9 Ce SHEMOEEE pom" Position="0, 71" ScreenshotGuid="af0403f8-edb1-4b94-ab3a-739204d5bbb6" ServerVersion="1">
-                        <uc:CVCache.CvUiElements>
-                          <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="4">
-                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="98, 3, 873, 43" />
-                          </scg:List>
-                        </uc:CVCache.CvUiElements>
-                        <uc:CVCache.OcrTexts>
-                          <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="8">
-                            <uc:OcrTextInfo Region="48, 11, 69, 32" Text="AEE" />
-                            <uc:OcrTextInfo Region="114, 11, 68, 32" Text="SEED" />
-                            <uc:OcrTextInfo Region="183, 16, 10, 17" Text="9" />
-                            <uc:OcrTextInfo Region="896, 11, 68, 31" Text="Ce" />
-                            <uc:OcrTextInfo Region="987, 18, 216, 17" Text="SHEMOEEE" />
-                            <uc:OcrTextInfo Region="1157, 11, 45, 31" Text="pom" />
-                          </scg:List>
-                        </uc:CVCache.OcrTexts>
-                      </uc:CVCache>
-                      <uc:CVCache DisplayName="Main Screen" Id="6d724edd-71e4-4ad5-a8a5-bece565c54b7" InformativeScreenshot="a5e5f071b1b4c08b1aeaa1fb3ca96aa5" LogicalPosition="0, 71" OcrText="AEE SEED 9 Em [Yogou]&#xD;&#xA;Dashboard&#xD;&#xA;Home / Dashboard&#xD;&#xA;Welcome, alfredo.miranda@e5.ai&#xD;&#xA;to System 1.&#xD;&#xA;IF this is your first time logging&#xD;&#xA;in, please make sure to go to User Options -&gt; Reset Test Data.&#xD;&#xA;2 User options ]&#xD;&#xA;= Work Items ]&#xD;&#xA;8 Accounts ]&#xD;&#xA;== Checks ]&#xD;&#xA;BB Vendors ]&#xD;&#xA;( BN 3" Position="0, 71" ScreenshotGuid="9256fc05-c128-4e89-9061-5f3575328bdc" ServerVersion="1">
+                      <uc:CVCache DisplayName="Screen CV Click - 'AEE SEED 9' (Main)" Id="6d724edd-71e4-4ad5-a8a5-bece565c54b7" InformativeScreenshot="a5e5f071b1b4c08b1aeaa1fb3ca96aa5" LogicalPosition="0, 71" OcrText="AEE SEED 9 Em [Yogou]&#xA;Dashboard&#xA;Home / Dashboard&#xA;Welcome, alfredo.miranda@e5.ai&#xA;to System 1.&#xA;IF this is your first time logging&#xA;in, please make sure to go to User Options -&gt; Reset Test Data.&#xA;2 User options ]&#xA;= Work Items ]&#xA;8 Accounts ]&#xA;== Checks ]&#xA;BB Vendors ]&#xA;( BN 3" Position="0, 71" ScreenshotGuid="9256fc05-c128-4e89-9061-5f3575328bdc" ServerVersion="1">
                         <uc:CVCache.CvUiElements>
                           <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="32">
                             <uc:CvElementInfo Category="Button" Region="129, 536, 206, 51" />
@@ -407,6 +411,170 @@
                           </scg:List>
                         </uc:CVCache.OcrTexts>
                       </uc:CVCache>
+                      <uc:CVCache DisplayName="Screen CV Element Exists - 'AE" Id="5e1ec2a9-0458-463b-b007-744385c1cde7" InformativeScreenshot="134ff264639e099f2627dd0db91386a9" LogicalPosition="0, 71" OcrText="AEE SEED 9 Em [Yogou]&#xD;&#xA;Dashboard&#xD;&#xA;Home / Dashboard&#xD;&#xA;Welcome, alfredo.miranda@e5.ai&#xD;&#xA;to System 1.&#xD;&#xA;IF this is your first time logging&#xD;&#xA;in, please make sure to go to User Options -&gt; Reset Test Data.&#xD;&#xA;&amp; User options ] Dovriload Client and Support&#xD;&#xA;Reset test data&#xD;&#xA;£= Work Items ] Change password&#xD;&#xA;Check training assignments&#xD;&#xA;8 Accounts ]&#xD;&#xA;( == Checks |" Position="0, 71" ServerVersion="1">
+                        <uc:CVCache.CvUiElements>
+                          <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="32">
+                            <uc:CvElementInfo Category="Button" Region="129, 369, 204, 50" />
+                            <uc:CvElementInfo Category="Button" Region="129, 313, 205, 50" />
+                            <uc:CvElementInfo Category="Icon" Region="167, 324, 22, 24" />
+                            <uc:CvElementInfo Category="Button" Region="129, 425, 205, 50" />
+                            <uc:CvElementInfo Category="Icon" Region="170, 382, 27, 22" />
+                            <uc:CvElementInfo Category="Icon" Region="184, 492, 28, 24" />
+                            <uc:CvElementInfo Category="Icon" Region="177, 438, 31, 22" />
+                            <uc:CvElementInfo Category="Button" Region="131, 482, 202, 37" />
+                            <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="355, 318, 246, 114" />
+                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="62, 158, 1142, 36" />
+                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="355, 316, 247, 117" />
+                            <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="588, 288, 15, 15" />
+                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="77, 109, 1130, 31" />
+                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="166, 4, 784, 43" />
+                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1185, 157, 15, 42" />
+                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="931, 192, 272, 28" />
+                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="894, 136, 299, 21" />
+                          </scg:List>
+                        </uc:CVCache.CvUiElements>
+                        <uc:CVCache.OcrTexts>
+                          <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="64">
+                            <uc:OcrTextInfo Region="48, 11, 69, 32" Text="AEE" />
+                            <uc:OcrTextInfo Region="114, 11, 68, 32" Text="SEED" />
+                            <uc:OcrTextInfo Region="183, 16, 10, 17" Text="9" />
+                            <uc:OcrTextInfo Region="925, 11, 32, 31" Text="Em" />
+                            <uc:OcrTextInfo Region="1151, 18, 56, 17" Text="[Yogou]" />
+                            <uc:OcrTextInfo Region="64, 96, 171, 26" Text="Dashboard" />
+                            <uc:OcrTextInfo Region="77, 173, 36, 10" Text="Home" />
+                            <uc:OcrTextInfo Region="123, 173, 4, 10" Text="/" />
+                            <uc:OcrTextInfo Region="137, 173, 72, 10" Text="Dashboard" />
+                            <uc:OcrTextInfo Region="132, 242, 160, 31" Text="Welcome," />
+                            <uc:OcrTextInfo Region="302, 242, 399, 35" Text="alfredo.miranda@e5.ai" />
+                            <uc:OcrTextInfo Region="697, 243, 28, 25" Text="to" />
+                            <uc:OcrTextInfo Region="738, 242, 120, 33" Text="System" />
+                            <uc:OcrTextInfo Region="870, 242, 24, 26" Text="1." />
+                            <uc:OcrTextInfo Region="132, 290, 8, 10" Text="IF" />
+                            <uc:OcrTextInfo Region="140, 290, 28, 10" Text="this" />
+                            <uc:OcrTextInfo Region="170, 292, 10, 8" Text="is" />
+                            <uc:OcrTextInfo Region="183, 282, 28, 25" Text="your" />
+                            <uc:OcrTextInfo Region="209, 282, 30, 25" Text="first" />
+                            <uc:OcrTextInfo Region="241, 290, 28, 10" Text="time" />
+                            <uc:OcrTextInfo Region="272, 290, 49, 13" Text="logging" />
+                            <uc:OcrTextInfo Region="321, 292, 15, 10" Text="in," />
+                            <uc:OcrTextInfo Region="339, 290, 42, 13" Text="please" />
+                            <uc:OcrTextInfo Region="384, 290, 36, 10" Text="make" />
+                            <uc:OcrTextInfo Region="422, 292, 28, 8" Text="sure" />
+                            <uc:OcrTextInfo Region="453, 290, 12, 10" Text="to" />
+                            <uc:OcrTextInfo Region="469, 292, 16, 11" Text="go" />
+                            <uc:OcrTextInfo Region="488, 290, 12, 10" Text="to" />
+                            <uc:OcrTextInfo Region="504, 290, 32, 10" Text="User" />
+                            <uc:OcrTextInfo Region="538, 290, 49, 13" Text="Options" />
+                            <uc:OcrTextInfo Region="589, 292, 14, 7" Text="-&gt;" />
+                            <uc:OcrTextInfo Region="607, 290, 40, 10" Text="Reset" />
+                            <uc:OcrTextInfo Region="646, 290, 28, 10" Text="Test" />
+                            <uc:OcrTextInfo Region="677, 290, 30, 10" Text="Data." />
+                            <uc:OcrTextInfo Region="171, 328, 15, 18" Text="&amp;" />
+                            <uc:OcrTextInfo Region="193, 331, 40, 13" Text="User" />
+                            <uc:OcrTextInfo Region="235, 331, 63, 17" Text="options" />
+                            <uc:OcrTextInfo Region="328, 316, 4, 44" Text="]" />
+                            <uc:OcrTextInfo Region="374, 331, 63, 10" Text="Dovriload" />
+                            <uc:OcrTextInfo Region="439, 331, 36, 10" Text="Client" />
+                            <uc:OcrTextInfo Region="479, 331, 24, 10" Text="and" />
+                            <uc:OcrTextInfo Region="506, 331, 49, 13" Text="Support" />
+                            <uc:OcrTextInfo Region="373, 357, 40, 10" Text="Reset" />
+                            <uc:OcrTextInfo Region="413, 357, 24, 10" Text="test" />
+                            <uc:OcrTextInfo Region="440, 357, 28, 10" Text="data" />
+                            <uc:OcrTextInfo Region="173, 386, 22, 14" Text="£=" />
+                            <uc:OcrTextInfo Region="199, 387, 44, 13" Text="Work" />
+                            <uc:OcrTextInfo Region="247, 387, 45, 13" Text="Items" />
+                            <uc:OcrTextInfo Region="328, 372, 4, 44" Text="]" />
+                            <uc:OcrTextInfo Region="373, 383, 48, 13" Text="Change" />
+                            <uc:OcrTextInfo Region="426, 383, 64, 13" Text="password" />
+                            <uc:OcrTextInfo Region="373, 409, 40, 10" Text="Check" />
+                            <uc:OcrTextInfo Region="416, 409, 48, 13" Text="training" />
+                            <uc:OcrTextInfo Region="467, 409, 77, 13" Text="assignments" />
+                            <uc:OcrTextInfo Region="181, 442, 23, 14" Text="8" />
+                            <uc:OcrTextInfo Region="208, 443, 80, 13" Text="Accounts" />
+                            <uc:OcrTextInfo Region="328, 428, 4, 44" Text="]" />
+                            <uc:OcrTextInfo Region="132, 484, 4, 35" Text="(" />
+                            <uc:OcrTextInfo Region="189, 497, 20, 16" Text="==" />
+                            <uc:OcrTextInfo Region="215, 499, 60, 13" Text="Checks" />
+                            <uc:OcrTextInfo Region="328, 484, 4, 35" Text="|" />
+                          </scg:List>
+                        </uc:CVCache.OcrTexts>
+                      </uc:CVCache>
+                      <uc:CVCache DisplayName="Screen CV Click - 'AEE SEED 9'" Id="720ab8c2-81d9-41f8-8192-27903f980c3a" InformativeScreenshot="849cf5ddc8e043bd018d27596abaa5f6" LogicalPosition="0, 71" OcrText="AEE SEED 9 Em [Yogou]&#xD;&#xA;Dashboard&#xD;&#xA;Home / Dashboard&#xD;&#xA;Welcome, alfredo.miranda@e5.ai&#xD;&#xA;to System 1.&#xD;&#xA;IF this is your first time logging&#xD;&#xA;in, please make sure to go to User Options -&gt; Reset Test Data.&#xD;&#xA;2 User options ]&#xD;&#xA;= Work Items ]&#xD;&#xA;8 Accounts ]&#xD;&#xA;( == Checks |" Position="0, 71" ServerVersion="1">
+                        <uc:CVCache.CvUiElements>
+                          <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="32">
+                            <uc:CvElementInfo Category="Button" Region="129, 369, 204, 50" />
+                            <uc:CvElementInfo Category="Icon" Region="167, 324, 22, 24" />
+                            <uc:CvElementInfo Category="Button" Region="129, 313, 205, 50" />
+                            <uc:CvElementInfo Category="Icon" Region="170, 382, 27, 22" />
+                            <uc:CvElementInfo Category="Button" Region="129, 425, 205, 50" />
+                            <uc:CvElementInfo Category="Icon" Region="184, 492, 28, 24" />
+                            <uc:CvElementInfo Category="Icon" Region="177, 438, 31, 21" />
+                            <uc:CvElementInfo Category="Button" Region="131, 482, 202, 37" />
+                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="62, 158, 1142, 37" />
+                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="77, 109, 1130, 31" />
+                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="130, 313, 203, 49" />
+                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="166, 4, 784, 43" />
+                            <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="130, 368, 203, 50" />
+                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1185, 157, 15, 42" />
+                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="931, 192, 272, 28" />
+                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="894, 136, 299, 21" />
+                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="67, 154, 1079, 39" />
+                          </scg:List>
+                        </uc:CVCache.CvUiElements>
+                        <uc:CVCache.OcrTexts>
+                          <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="64">
+                            <uc:OcrTextInfo Region="48, 11, 69, 32" Text="AEE" />
+                            <uc:OcrTextInfo Region="114, 11, 68, 32" Text="SEED" />
+                            <uc:OcrTextInfo Region="183, 16, 10, 17" Text="9" />
+                            <uc:OcrTextInfo Region="925, 11, 32, 31" Text="Em" />
+                            <uc:OcrTextInfo Region="1151, 18, 56, 17" Text="[Yogou]" />
+                            <uc:OcrTextInfo Region="64, 96, 171, 26" Text="Dashboard" />
+                            <uc:OcrTextInfo Region="77, 173, 36, 10" Text="Home" />
+                            <uc:OcrTextInfo Region="123, 173, 4, 10" Text="/" />
+                            <uc:OcrTextInfo Region="137, 173, 72, 10" Text="Dashboard" />
+                            <uc:OcrTextInfo Region="132, 242, 160, 31" Text="Welcome," />
+                            <uc:OcrTextInfo Region="302, 242, 399, 35" Text="alfredo.miranda@e5.ai" />
+                            <uc:OcrTextInfo Region="697, 243, 28, 25" Text="to" />
+                            <uc:OcrTextInfo Region="738, 242, 120, 33" Text="System" />
+                            <uc:OcrTextInfo Region="870, 242, 24, 26" Text="1." />
+                            <uc:OcrTextInfo Region="132, 290, 8, 10" Text="IF" />
+                            <uc:OcrTextInfo Region="140, 290, 28, 10" Text="this" />
+                            <uc:OcrTextInfo Region="170, 292, 10, 8" Text="is" />
+                            <uc:OcrTextInfo Region="183, 282, 28, 25" Text="your" />
+                            <uc:OcrTextInfo Region="209, 282, 30, 25" Text="first" />
+                            <uc:OcrTextInfo Region="241, 290, 28, 10" Text="time" />
+                            <uc:OcrTextInfo Region="272, 290, 49, 13" Text="logging" />
+                            <uc:OcrTextInfo Region="321, 292, 15, 10" Text="in," />
+                            <uc:OcrTextInfo Region="339, 290, 42, 13" Text="please" />
+                            <uc:OcrTextInfo Region="384, 290, 36, 10" Text="make" />
+                            <uc:OcrTextInfo Region="422, 292, 28, 8" Text="sure" />
+                            <uc:OcrTextInfo Region="453, 290, 12, 10" Text="to" />
+                            <uc:OcrTextInfo Region="469, 292, 16, 11" Text="go" />
+                            <uc:OcrTextInfo Region="488, 290, 12, 10" Text="to" />
+                            <uc:OcrTextInfo Region="504, 290, 32, 10" Text="User" />
+                            <uc:OcrTextInfo Region="538, 290, 49, 13" Text="Options" />
+                            <uc:OcrTextInfo Region="589, 292, 14, 7" Text="-&gt;" />
+                            <uc:OcrTextInfo Region="607, 290, 40, 10" Text="Reset" />
+                            <uc:OcrTextInfo Region="646, 290, 28, 10" Text="Test" />
+                            <uc:OcrTextInfo Region="677, 290, 30, 10" Text="Data." />
+                            <uc:OcrTextInfo Region="171, 328, 15, 18" Text="2" />
+                            <uc:OcrTextInfo Region="193, 331, 40, 13" Text="User" />
+                            <uc:OcrTextInfo Region="235, 331, 63, 17" Text="options" />
+                            <uc:OcrTextInfo Region="328, 316, 4, 44" Text="]" />
+                            <uc:OcrTextInfo Region="173, 386, 21, 14" Text="=" />
+                            <uc:OcrTextInfo Region="199, 387, 44, 13" Text="Work" />
+                            <uc:OcrTextInfo Region="247, 387, 45, 13" Text="Items" />
+                            <uc:OcrTextInfo Region="328, 372, 4, 44" Text="]" />
+                            <uc:OcrTextInfo Region="187, 442, 17, 14" Text="8" />
+                            <uc:OcrTextInfo Region="208, 438, 80, 26" Text="Accounts" />
+                            <uc:OcrTextInfo Region="328, 428, 4, 44" Text="]" />
+                            <uc:OcrTextInfo Region="132, 484, 4, 35" Text="(" />
+                            <uc:OcrTextInfo Region="189, 497, 20, 16" Text="==" />
+                            <uc:OcrTextInfo Region="215, 499, 60, 13" Text="Checks" />
+                            <uc:OcrTextInfo Region="328, 484, 4, 35" Text="|" />
+                          </scg:List>
+                        </uc:CVCache.OcrTexts>
+                      </uc:CVCache>
                     </scg:List>
                   </uc:CvCacheContainer.Caches>
                 </uc:CvCacheContainer>
@@ -416,7 +584,7 @@
                   <ActivityFunc.Argument>
                     <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
                   </ActivityFunc.Argument>
-                  <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GoogleOCR_3" Image="[Image]" />
+                  <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="GoogleOCR_3" Image="[Image]" />
                 </ActivityFunc>
               </p:CVScope.OCREngine>
               <p:CVScope.Target>
@@ -440,7 +608,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="919,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1107,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -451,19 +619,19 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Exception in dashboard navigation" sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Exception in dashboard navigation" sap:VirtualizedContainerService.HintSize="450,265" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Error navigating in dashboard" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Error navigation to dashboard&quot;]" />
-              <Rethrow DisplayName="Rethrow navigation in dashboard exception" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+              <ui:LogMessage DisplayName="Error navigating in dashboard" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Error navigation to dashboard&quot;]" />
+              <Rethrow DisplayName="Rethrow navigation in dashboard exception" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
             </Sequence>
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="End Message" sap:VirtualizedContainerService.HintSize="953,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Navigate to dashboard ended&quot;]" />
+    <ui:LogMessage DisplayName="End Message" sap:VirtualizedContainerService.HintSize="1141,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Navigate to dashboard ended&quot;]" />
   </Sequence>
 </Activity>

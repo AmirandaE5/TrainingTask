@@ -1,6 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="ExtractWorkItems" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property sap2010:Annotation.AnnotationText="It will have the data table with the work items to filter and get the correct work item ID and status" Name="out_WorkItems" Type="OutArgument(sd:DataTable)">
+    <x:Property sap2010:Annotation.AnnotationText="It will have the data table with the work items to filter and get the correct work item ID and status" Name="WorkItems" Type="OutArgument(sd:DataTable)">
       <x:Property.Attributes>
         <RequiredArgumentAttribute />
       </x:Property.Attributes>
@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1152,4569</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1154,4605</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExtractWorkItems_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="45">
@@ -100,7 +100,6 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -108,7 +107,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="ExtractWorkItems" sap:VirtualizedContainerService.HintSize="1087,4504" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ExtractWorkItems" sap:VirtualizedContainerService.HintSize="1087,4540" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="WorkItems" />
       <Variable x:TypeArguments="x:Boolean" Name="WorkItemsExists" />
@@ -119,7 +118,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Start Message" sap:VirtualizedContainerService.HintSize="1025,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Extract work items started&quot;]" />
-    <TryCatch sap2010:Annotation.AnnotationText="It will extract the work items from the table&#xA;" DisplayName="Extract work items" sap:VirtualizedContainerService.HintSize="1025,4129" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch sap2010:Annotation.AnnotationText="It will extract the work items from the table&#xA;" DisplayName="Extract work items" sap:VirtualizedContainerService.HintSize="1025,4165" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -128,14 +127,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Extracting workitems" sap:VirtualizedContainerService.HintSize="987,3439" sap2010:WorkflowViewState.IdRef="Sequence_68">
+        <Sequence DisplayName="Extracting workitems" sap:VirtualizedContainerService.HintSize="987,3475" sap2010:WorkflowViewState.IdRef="Sequence_68">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="5aehhMtY4g2iuEltqGUyepTZ6e4e+EpS8erhB7sk0hR9UqY41ifbtSA8pBDrm+pqLO38A274w118WWeNiZJEfw==" CvMethod="ElementDetection, OCR" DesignTimeCacheId="73b9ba98-3d1e-44a5-af68-563b1df62a94" DisplayName="Workitems scope" sap:VirtualizedContainerService.HintSize="925,3328" sap2010:WorkflowViewState.IdRef="CVScope_14" Version="V3">
+          <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="5aehhMtY4g2iuEltqGUyepTZ6e4e+EpS8erhB7sk0hR9UqY41ifbtSA8pBDrm+pqLO38A274w118WWeNiZJEfw==" CvMethod="ElementDetection, OCR" DesignTimeCacheId="73b9ba98-3d1e-44a5-af68-563b1df62a94" DisplayName="Workitems scope" sap:VirtualizedContainerService.HintSize="925,3364" sap2010:WorkflowViewState.IdRef="CVScope_14" Version="V3">
             <p:CVScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -149,7 +148,7 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text '| Actions' (132,139,65,36)&quot; +&#xD;&#xA;&quot;Anchor: Text 'wip' (247,141,42,28)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Description' (385,141,88,28)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Type' (793,141,40,28)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Status' (884,141,42,28)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Date' (975,141,40,28)&quot;]" DesignTimeCacheId="73b9ba98-3d1e-44a5-af68-563b1df62a94" DesignTimeScaleFactor="1" DisplayName="Workitems table loaded?" sap:VirtualizedContainerService.HintSize="388,137" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_3" InformativeScreenshot="8de7faf55d0b641cdef3cf3a9aa97596" Result="[WorkItemsExists]" Version="V3">
+                    <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text '| Actions' (132,139,65,36)&quot; +&#xA;&quot;Anchor: Text 'wip' (247,141,42,28)&quot; +&#xA;&quot;Anchor: Text 'Description' (385,141,88,28)&quot; +&#xA;&quot;Anchor: Text 'Type' (793,141,40,28)&quot; +&#xA;&quot;Anchor: Text 'Status' (884,141,42,28)&quot; +&#xA;&quot;Anchor: Text 'Date' (975,141,40,28)&quot;]" DesignTimeCacheId="73b9ba98-3d1e-44a5-af68-563b1df62a94" DesignTimeScaleFactor="1" DisplayName="Workitems table loaded?" sap:VirtualizedContainerService.HintSize="388,137" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_3" InformativeScreenshot="8de7faf55d0b641cdef3cf3a9aa97596" Result="[WorkItemsExists]" Version="V3">
                       <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                         <uc:CvDescriptor>
                           <uc:CvDescriptor.Anchors>
@@ -191,7 +190,7 @@
                       </If.Else>
                     </If>
                   </Sequence>
-                  <Sequence DisplayName="Extract work items" sap:VirtualizedContainerService.HintSize="891,1407" sap2010:WorkflowViewState.IdRef="Sequence_75">
+                  <Sequence DisplayName="Extract work items" sap:VirtualizedContainerService.HintSize="891,1483" sap2010:WorkflowViewState.IdRef="Sequence_75">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -199,15 +198,15 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="Delay_19" />
-                    <ui:RepeatNumberOfTimesX DisplayName="Repeat Number of Times" sap:VirtualizedContainerService.HintSize="434,271" sap2010:WorkflowViewState.IdRef="RepeatNumberOfTimesX_16" NumberOfTimes="5" StartAt="1">
+                    <ui:RepeatNumberOfTimesX DisplayName="Scroll down to view the table" sap:VirtualizedContainerService.HintSize="434,309" sap2010:WorkflowViewState.IdRef="RepeatNumberOfTimesX_16" NumberOfTimes="5" StartAt="1">
                       <ui:RepeatNumberOfTimesX.Body>
                         <ActivityAction x:TypeArguments="x:Int32">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentItem" />
                           </ActivityAction.Argument>
-                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="SendHotkey_18" Key="down" KeyModifiers="None" SpecialKey="True">
+                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'scroll down'" sap:VirtualizedContainerService.HintSize="334,153" sap2010:WorkflowViewState.IdRef="SendHotkey_18" Key="down" KeyModifiers="None" SpecialKey="True">
                             <ui:SendHotkey.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="65576f0c-e852-4e18-a79d-d63a79a93a29">
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="65576f0c-e852-4e18-a79d-d63a79a93a29" InformativeScreenshot="a3964b1728e29d79d1fdf74441b51415" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Work Items' /&gt;&lt;webctrl tag='BODY' /&gt;">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
@@ -234,7 +233,7 @@
                     </ui:RepeatNumberOfTimesX>
                     <Assign DisplayName="Initialize data table" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
                       <Assign.To>
-                        <OutArgument x:TypeArguments="sd:DataTable">[out_WorkItems]</OutArgument>
+                        <OutArgument x:TypeArguments="sd:DataTable">[WorkItems]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
                         <InArgument x:TypeArguments="sd:DataTable">[new System.Data.DataTable]</InArgument>
@@ -249,8 +248,8 @@
                         </uc:CvDescriptor>
                       </p:CvExtractDataTableWithDescriptor.DesignTimeDescriptor>
                     </p:CvExtractDataTableWithDescriptor>
-                    <ui:MergeDataTable Destination="[out_WorkItems]" DisplayName="Merge data table pages" sap:VirtualizedContainerService.HintSize="434,133" sap2010:WorkflowViewState.IdRef="MergeDataTable_12" MissingSchemaAction="Add" Source="[WorkItems]" />
-                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Button (1101,581,26,25)&quot; +&#xD;&#xA;&quot;Anchor: Icon (1101,581,27,25)&quot; +&#xD;&#xA;&quot;Anchor: Cell (978,527,151,40)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Aa' (1072,589,14,10)&quot;]" DesignTimeCacheId="73b9ba98-3d1e-44a5-af68-563b1df62a94" DesignTimeScaleFactor="1" DisplayName="Read next page" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_9" InformativeScreenshot="50712318d5573fd0c173fc73a3d6f4c1" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                    <ui:MergeDataTable Destination="[WorkItems]" DisplayName="Merge data table pages" sap:VirtualizedContainerService.HintSize="434,133" sap2010:WorkflowViewState.IdRef="MergeDataTable_12" MissingSchemaAction="Add" Source="[WorkItems]" />
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Button (1101,581,26,25)&quot; +&#xA;&quot;Anchor: Icon (1101,581,27,25)&quot; +&#xA;&quot;Anchor: Cell (978,527,151,40)&quot; +&#xA;&quot;Anchor: Text 'Aa' (1072,589,14,10)&quot;]" DesignTimeCacheId="73b9ba98-3d1e-44a5-af68-563b1df62a94" DesignTimeScaleFactor="1" DisplayName="Read next page" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_9" InformativeScreenshot="50712318d5573fd0c173fc73a3d6f4c1" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
                       <p:CvClickWithDescriptor.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -286,15 +285,15 @@
                         </ui:Target>
                       </p:CvClickWithDescriptor.Target>
                     </p:CvClickWithDescriptor>
-                    <ui:RepeatNumberOfTimesX DisplayName="Repeat Number of Times" sap:VirtualizedContainerService.HintSize="434,271" sap2010:WorkflowViewState.IdRef="RepeatNumberOfTimesX_19" NumberOfTimes="5" StartAt="1">
+                    <ui:RepeatNumberOfTimesX DisplayName="Scroll down to view the table" sap:VirtualizedContainerService.HintSize="434,309" sap2010:WorkflowViewState.IdRef="RepeatNumberOfTimesX_19" NumberOfTimes="5" StartAt="1">
                       <ui:RepeatNumberOfTimesX.Body>
                         <ActivityAction x:TypeArguments="x:Int32">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentItem" />
                           </ActivityAction.Argument>
-                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Scroll down for visibility of the table" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="SendHotkey_21" Key="down" KeyModifiers="None" SpecialKey="True">
+                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Scroll down for visibility of the table" sap:VirtualizedContainerService.HintSize="334,153" sap2010:WorkflowViewState.IdRef="SendHotkey_21" Key="down" KeyModifiers="None" SpecialKey="True">
                             <ui:SendHotkey.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="d5d7554b-22de-479c-95b9-aa79ea796df3">
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d5d7554b-22de-479c-95b9-aa79ea796df3" InformativeScreenshot="9c6c808bd7f72aa111a3294e88c67c5d" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Work Items' /&gt;&lt;webctrl tag='BODY' /&gt;">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
@@ -324,7 +323,7 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: TableCell (131,135,998,432)&quot; +&#xD;&#xA;&quot;ColumnNumber: 1 (131,135,125,38)&quot; +&#xD;&#xA;&quot;RowNumber: 1 (131,135,125,38)&quot;]" DesignTimeCacheId="73b9ba98-3d1e-44a5-af68-563b1df62a94" DesignTimeScaleFactor="1" DisplayName="Table exists?" sap:VirtualizedContainerService.HintSize="829,137" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_5" InformativeScreenshot="9e85afb33df9d5331ae952a2b1d0d1ce" Result="[WIExists]" Version="V3">
+                    <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: TableCell (131,135,998,432)&quot; +&#xA;&quot;ColumnNumber: 1 (131,135,125,38)&quot; +&#xA;&quot;RowNumber: 1 (131,135,125,38)&quot;]" DesignTimeCacheId="73b9ba98-3d1e-44a5-af68-563b1df62a94" DesignTimeScaleFactor="1" DisplayName="Table exists?" sap:VirtualizedContainerService.HintSize="829,137" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_5" InformativeScreenshot="9e85afb33df9d5331ae952a2b1d0d1ce" Result="[WIExists]" Version="V3">
                       <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                         <uc:CvDescriptor>
                           <uc:CvDescriptor.Target>
@@ -363,11 +362,14 @@
                 </Sequence>
               </ActivityAction>
             </p:CVScope.Body>
+            <p:CVScope.DesignTimeCache>
+              <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" />
+            </p:CVScope.DesignTimeCache>
             <p:CVScope.DesignTimeCacheContainer>
               <uc:CvCacheContainer>
                 <uc:CvCacheContainer.Caches>
                   <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
-                    <uc:CVCache DisplayName="Screen CV Element Exists - '|  (Main)" Id="73b9ba98-3d1e-44a5-af68-563b1df62a94" InformativeScreenshot="8b261b8e8e6c6bf891ce892788568308" LogicalPosition="0, 71" OcrText="ACNE EEE 1 fron) wen I&#xD;&#xA;| ‘Search Results |&#xD;&#xA;| Please find below your work items. They need to be completed&#xD;&#xA;in the order specified by your manager. |&#xD;&#xA;| Actions wip Description Type Status Date |&#xD;&#xA;| QE 92525499 Generate Yearly Report for Vendor wi4 Open 2021-12-08 |&#xD;&#xA;| a ® 92525475 Calculate Client Security Hash WIS Open 2020-07-31 |&#xD;&#xA;| a ® 92525603 Verify Account Position wit Open 2020-03-23 |&#xD;&#xA;| QE 92525504 Generate Yearly Report for Vendor wi4 Open 20220726 |&#xD;&#xA;| QE 92525503 Generate Yearly Report for Vendor wi4 Open 2023-04-20 |&#xD;&#xA;| a ® 92525589 Verify Account Position wit Open 2017-05-02 |&#xD;&#xA;| QE 92525545 Research Client Check Copy wi2 Open 2019-07-28 |&#xD;&#xA;| AE 92525561 Research Client Check Copy wi2 Open 2018-0315 |&#xD;&#xA;| QE 92525540 Research Client Check Copy wi2 Open 2020-03-19 |&#xD;&#xA;a ® 92525578 Verify Account Position wit Open 2019-10-18 |&#xD;&#xA;2% 03 fan 08 Ser (7. (8 {9% 0 JAM a2 43 Aa i&gt; ." Position="0, 71" ScreenshotGuid="fb854690-0878-4a6f-8ac3-72bda73cef55" ServerVersion="1">
+                    <uc:CVCache DisplayName="Screen CV Element Exists - '|  (Main)" Id="73b9ba98-3d1e-44a5-af68-563b1df62a94" InformativeScreenshot="8b261b8e8e6c6bf891ce892788568308" LogicalPosition="0, 71" OcrText="ACNE EEE 1 fron) wen I&#xA;| ‘Search Results |&#xA;| Please find below your work items. They need to be completed&#xA;in the order specified by your manager. |&#xA;| Actions wip Description Type Status Date |&#xA;| QE 92525499 Generate Yearly Report for Vendor wi4 Open 2021-12-08 |&#xA;| a ® 92525475 Calculate Client Security Hash WIS Open 2020-07-31 |&#xA;| a ® 92525603 Verify Account Position wit Open 2020-03-23 |&#xA;| QE 92525504 Generate Yearly Report for Vendor wi4 Open 20220726 |&#xA;| QE 92525503 Generate Yearly Report for Vendor wi4 Open 2023-04-20 |&#xA;| a ® 92525589 Verify Account Position wit Open 2017-05-02 |&#xA;| QE 92525545 Research Client Check Copy wi2 Open 2019-07-28 |&#xA;| AE 92525561 Research Client Check Copy wi2 Open 2018-0315 |&#xA;| QE 92525540 Research Client Check Copy wi2 Open 2020-03-19 |&#xA;a ® 92525578 Verify Account Position wit Open 2019-10-18 |&#xA;2% 03 fan 08 Ser (7. (8 {9% 0 JAM a2 43 Aa i&gt; ." Position="0, 71" ScreenshotGuid="fb854690-0878-4a6f-8ac3-72bda73cef55" ServerVersion="1">
                       <uc:CVCache.CvTables>
                         <x:Array Type="uc:CvTableInfo">
                           <uc:CvTableInfo>
@@ -754,7 +756,7 @@
         <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="991,337" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>

@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1152,6795</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1139,7023</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UploadYearlyReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="40">
@@ -101,7 +101,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="It will upload the yearly report from the downloaded monthly reports according to the TaxID" DisplayName="UploadYearlyReport" sap:VirtualizedContainerService.HintSize="1149,6730" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="It will upload the yearly report from the downloaded monthly reports according to the TaxID" DisplayName="UploadYearlyReport" sap:VirtualizedContainerService.HintSize="1149,6958" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="DocumentsPath" />
       <Variable x:TypeArguments="x:String" Default="[DocumentsPath + ReportsPath +TaxID +&quot;-&quot; + Year + &quot;.xlsx&quot;]" Name="ReportPath" />
@@ -115,14 +115,14 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Start Message" sap:VirtualizedContainerService.HintSize="1087,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Upload Yearly report started&quot;]" />
-    <TryCatch DisplayName="Upload Yearly Report" sap:VirtualizedContainerService.HintSize="1087,6324" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Upload Yearly Report" sap:VirtualizedContainerService.HintSize="1087,6552" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Uploading yearly report" sap:VirtualizedContainerService.HintSize="1049,5676" sap2010:WorkflowViewState.IdRef="Sequence_17">
+        <Sequence DisplayName="Uploading yearly report" sap:VirtualizedContainerService.HintSize="1049,5904" sap2010:WorkflowViewState.IdRef="Sequence_17">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -160,12 +160,12 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="TaxID error Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[&quot;Error getting Year&quot;]" />
+                  <ui:LogMessage DisplayName="Year error Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[&quot;Error getting Year&quot;]" />
                   <Throw DisplayName="Error getting Year" Exception="[New BusinessRuleException(&quot;Error getting Year&quot;)]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Throw_3" />
                 </Sequence>
               </If.Then>
               <If.Else>
-                <ui:LogMessage DisplayName="TaxID success Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Year retrieved correctly&quot;]" />
+                <ui:LogMessage DisplayName="Year success Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Year retrieved correctly&quot;]" />
               </If.Else>
             </If>
             <If Condition="[String.IsNullOrEmpty(ReportsPath)]" DisplayName="Check If report is valid" sap:VirtualizedContainerService.HintSize="829,428" sap2010:WorkflowViewState.IdRef="If_4">
@@ -185,7 +185,7 @@
               </If.Else>
             </If>
           </Sequence>
-          <Sequence DisplayName="Update Yearly Report" sap:VirtualizedContainerService.HintSize="987,4050" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence DisplayName="Update Yearly Report" sap:VirtualizedContainerService.HintSize="987,4278" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -200,7 +200,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:GetEnvironmentFolder>
-            <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="5aehhMtY4g2iuEltqGUyepTZ6e4e+EpS8erhB7sk0hR9UqY41ifbtSA8pBDrm+pqLO38A274w118WWeNiZJEfw==" CvMethod="ElementDetection, OCR" DesignTimeCacheId="45074062-417d-4ed1-b55e-3a3c021addcd" DisplayName="CV Screen Scope 'Yearly Report'" sap:VirtualizedContainerService.HintSize="925,3837" sap2010:WorkflowViewState.IdRef="CVScope_2" Version="V3">
+            <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="5aehhMtY4g2iuEltqGUyepTZ6e4e+EpS8erhB7sk0hR9UqY41ifbtSA8pBDrm+pqLO38A274w118WWeNiZJEfw==" CvMethod="ElementDetection, OCR" DesignTimeCacheId="541ab124-9728-4c2e-b198-354be1652c02" DisplayName="CV Screen Scope 'Yearly Report'" sap:VirtualizedContainerService.HintSize="925,4065" sap2010:WorkflowViewState.IdRef="CVScope_2" Version="V3">
               <p:CVScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
@@ -298,7 +298,7 @@
                         </ui:Target>
                       </p:CvSelectItemWithDescriptor.Target>
                     </p:CvSelectItemWithDescriptor>
-                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Button (130,413,140,37)&quot; +&#xA;&quot;Anchor: Text 'Select Report File ]' (145,415,124,32)&quot;]" DesignTimeCacheId="45074062-417d-4ed1-b55e-3a3c021addcd" DesignTimeScaleFactor="1" DisplayName="Upload report file" sap:VirtualizedContainerService.HintSize="891,137" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_4" InformativeScreenshot="1f7182998ad8da2a7a13003396b05f2c" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Button (130,413,140,37)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Select Report File ]' (145,415,124,32)&quot; +&#xD;&#xA;&quot;Anchor: Button (130,461,118,38)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Year:' (132,345,35,10)&quot;]" DesignTimeCacheId="45074062-417d-4ed1-b55e-3a3c021addcd" DesignTimeScaleFactor="1" DisplayName="CV Click - Button" sap:VirtualizedContainerService.HintSize="891,137" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_4" InformativeScreenshot="efee8791634f1d1d2c8f862815333535" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
                       <p:CvClickWithDescriptor.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -314,6 +314,8 @@
                           <uc:CvDescriptor.Anchors>
                             <x:Array Type="uc:CvElementDescriptor">
                               <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="145, 415, 124, 32" ElementType="Text" Text="Select Report File ]" />
+                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="130, 461, 118, 38" ElementType="Button" />
+                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="132, 345, 35, 10" ElementType="Text" Text="Year:" />
                             </x:Array>
                           </uc:CvDescriptor.Anchors>
                           <uc:CvDescriptor.Target>
@@ -537,9 +539,23 @@
                         </ui:Target>
                       </p:CvClickWithDescriptor.Target>
                     </p:CvClickWithDescriptor>
-                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Close confirmation ID pop up" sap:VirtualizedContainerService.HintSize="891,115" sap2010:WorkflowViewState.IdRef="SendHotkey_11" Key="enter" KeyModifiers="None" SpecialKey="True">
+                    <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (23,76,217,10)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Report was uploaded' (24,56,123,13)&quot;]" DesignTimeCacheId="541ab124-9728-4c2e-b198-354be1652c02" DesignTimeScaleFactor="1" DisplayName="Get confirmation ID" sap:VirtualizedContainerService.HintSize="891,167" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="950dd1ce74e4701f7f9bd0a2a62a3474" RefreshBefore="True" Version="V3">
+                      <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                        <uc:CvDescriptor>
+                          <uc:CvDescriptor.Anchors>
+                            <x:Array Type="uc:CvElementDescriptor">
+                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="24, 56, 123, 13" ElementType="Text" Text="Report was uploaded" />
+                            </x:Array>
+                          </uc:CvDescriptor.Anchors>
+                          <uc:CvDescriptor.Target>
+                            <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="23, 76, 217, 10" ElementType="AnyText" />
+                          </uc:CvDescriptor.Target>
+                        </uc:CvDescriptor>
+                      </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                    </p:CvGetTextWithDescriptor>
+                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Close confirmation ID pop up" sap:VirtualizedContainerService.HintSize="891,153" sap2010:WorkflowViewState.IdRef="SendHotkey_11" Key="enter" KeyModifiers="None" SpecialKey="True">
                       <ui:SendHotkey.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="c3feb6d8-6331-4d64-9b90-ac445c85b075">
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c3feb6d8-6331-4d64-9b90-ac445c85b075" InformativeScreenshot="8a74521c62493c72328a7c62a8c505e7" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='ACME System 1 - Upload Yearly Report - Google Chrome' /&gt;&lt;ctrl name='acme-test.uipath.com says' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' /&gt;">
                           <ui:Target.TimeoutMS>
                             <InArgument x:TypeArguments="x:Int32" />
                           </ui:Target.TimeoutMS>
@@ -558,7 +574,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'Reports - Upload Yearly Report' (64,96,499,33)&quot; +&#xA;&quot;Anchor: Text 'Home / Reports - Upload Yearly Report' (77,173,253,13)&quot; +&#xA;&quot;Anchor: Text 'Please fill in the following form to be able to upload a specific Vendor Yearly' (132,221,471,13)&quot; +&#xA;&quot;Anchor: Text '[ACMEISystemki]' (50,11,150,31)&quot;]" DesignTimeCacheId="45074062-417d-4ed1-b55e-3a3c021addcd" DesignTimeScaleFactor="1" DisplayName="CV Element Exists - Text" sap:VirtualizedContainerService.HintSize="829,137" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_5" InformativeScreenshot="2a4bfd8196e293efa3e66b970793b033" Result="[YearlyReportExists]" Version="V3">
+                      <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'Reports - Upload Yearly Report' (64,96,499,33)&quot; +&#xA;&quot;Anchor: Text 'Home / Reports - Upload Yearly Report' (77,173,253,13)&quot; +&#xA;&quot;Anchor: Text 'Please fill in the following form to be able to upload a specific Vendor Yearly' (132,221,471,13)&quot; +&#xA;&quot;Anchor: Text '[ACMEISystemki]' (50,11,150,31)&quot;]" DesignTimeCacheId="45074062-417d-4ed1-b55e-3a3c021addcd" DesignTimeScaleFactor="1" DisplayName="Yearly report valid?" sap:VirtualizedContainerService.HintSize="829,137" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_5" InformativeScreenshot="2a4bfd8196e293efa3e66b970793b033" Result="[YearlyReportExists]" Version="V3">
                         <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                           <uc:CvDescriptor>
                             <uc:CvDescriptor.Anchors>
@@ -606,8 +622,8 @@
               <p:CVScope.DesignTimeCacheContainer>
                 <uc:CvCacheContainer>
                   <uc:CvCacheContainer.Caches>
-                    <scg:List x:TypeArguments="uc:CVCache" Capacity="4">
-                      <uc:CVCache DisplayName="Screen CV Type Into - 'Vendor  (Main)" Id="45074062-417d-4ed1-b55e-3a3c021addcd" InformativeScreenshot="983003f4ff22711374fec56905f2ee73" LogicalPosition="0, 71" OcrText="[ACMEISystemki] Ee (HED&#xA;Reports - Upload Yearly Report&#xA;Home / Reports - Upload Yearly Report&#xA;Please fill in the following form to be able to upload a specific Vendor Yearly&#xA;Report.&#xA;Vendor TaxID:&#xA;Year:&#xA;[ Select Report File ]&#xA;[ 1" Position="0, 71" ScreenshotGuid="e9343a2e-c1a0-482f-b397-f7c1be1c0d90" ServerVersion="1">
+                    <scg:List x:TypeArguments="uc:CVCache" Capacity="5">
+                      <uc:CVCache DisplayName="Screen CV Type Into - 'Vendor  " Id="45074062-417d-4ed1-b55e-3a3c021addcd" InformativeScreenshot="983003f4ff22711374fec56905f2ee73" LogicalPosition="409, 62" OcrText="[ACMEISystemki] Ee (HED&#xA;Reports - Upload Yearly Report&#xA;Home / Reports - Upload Yearly Report&#xA;Please fill in the following form to be able to upload a specific Vendor Yearly&#xA;Report.&#xA;Vendor TaxID:&#xA;Year:&#xA;[ Select Report File ]&#xA;[ 1" Position="409, 62" ScreenshotGuid="e9343a2e-c1a0-482f-b397-f7c1be1c0d90" ServerVersion="1">
                         <uc:CVCache.CvUiElements>
                           <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="16">
                             <uc:CvElementInfo Category="Button" Region="130, 461, 118, 38" />
@@ -669,7 +685,7 @@
                           </scg:List>
                         </uc:CVCache.OcrTexts>
                       </uc:CVCache>
-                      <uc:CVCache DisplayName="Screen CV Element Exists - 'Re" Id="324a4e7b-c45e-4042-816b-8ac86695ab23" InformativeScreenshot="7f06a85df79a6307ffbbb532c30335f6" LogicalPosition="0, 71" OcrText="[ACMEISystemki] Ee (HED&#xA;Reports - Upload Yearly Report&#xA;Home / Reports - Upload Yearly Report&#xA;Please fill in the following form to be able to upload a specific Vendor Yearly&#xA;Report.&#xA;Vendor TaxID:&#xA;Year:&#xA;[ Select Report File ]&#xA;[ 1&#xA;Copyright © 2023 ACME Systems" Position="0, 71" ServerVersion="1">
+                      <uc:CVCache DisplayName="Screen CV Element Exists - 'Re" Id="324a4e7b-c45e-4042-816b-8ac86695ab23" InformativeScreenshot="7f06a85df79a6307ffbbb532c30335f6" LogicalPosition="409, 62" OcrText="[ACMEISystemki] Ee (HED&#xA;Reports - Upload Yearly Report&#xA;Home / Reports - Upload Yearly Report&#xA;Please fill in the following form to be able to upload a specific Vendor Yearly&#xA;Report.&#xA;Vendor TaxID:&#xA;Year:&#xA;[ Select Report File ]&#xA;[ 1&#xA;Copyright © 2023 ACME Systems" Position="409, 62" ServerVersion="1">
                         <uc:CVCache.CvUiElements>
                           <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="16">
                             <uc:CvElementInfo Category="Button" Region="131, 461, 118, 38" />
@@ -737,7 +753,7 @@
                           </scg:List>
                         </uc:CVCache.OcrTexts>
                       </uc:CVCache>
-                      <uc:CVCache DisplayName="Screen CV Type Into - 'ie ame:" Id="2bcf2d5e-6a84-4b95-acbb-babb9b239b24" InformativeScreenshot="23aeabf2ec9308a2c37ac7b7dea7c683" LogicalPosition="0, 71" OcrText="AEE SEED 9 Gh STENTS (pen&#xA;1 © Open x L&#xA;© 3 «AB» THSPC » Downloads [0] | scorch Downloads »|&#xA;Reports - Upload Yearly Re ogm- evo =e m0&#xA;tame ~ | ote mods | pe A]&#xA;Fr Quick access&#xA;Home / Reports - Upload Yearly Report oeien #5 Famenore 571072023 12:01 PM File&#xA;olde&#xA;[0 Generate¥eariyReport Citixhpp Ya 02TOM Fie fold]&#xA;reason fhe folowing fom fo be able f upton $B Dourlosds #3 ce Liprary1088mumkg 425720231216PM  NUPKG i&#xA;ft in he following form to be&#xA;able to Upload 2 spec Documents #  [ ACME&#xA;Library.1.0.65.nupkg ars 250M NUPKG E]&#xA;i Ebiwe  # [ACME Liber 05nueks wanna nase NUPKG El&#xA;Vendor TaxID: [J ACME Library [1 ACME Library.1.0.67.nugkg 4/26/2023 12:57PM NUPKG o |&#xA;( | [] ReFromewori Test L) ACME Library. 1.058 nupkg 4/26/2023 1:27PM NUPKG Fi&#xA;0 Report [0] ACME Library.1060.nupkg 4I620232300M NUPKG Fi&#xA;ver Ox [0] ACME Library.1070nupkg 4262023 5430M NUPKG Fi&#xA;: ports * [0] ACME Library.1071.nupkg 4262023 6450M NUPKG Fi&#xA;[ — - ] J ThisPC ] DO acve tbrary1.072nupkg 4/26/20237:21 PM NUPKG Fi&#xA;ACNE brary. 073g RBTHM NUPKG Fv oF Network ie Hon ARE 1 S [ Select Report File ] ie ame: | ACME Library 053k of Janse “|&#xA;[ ego re | | open || concer |&#xA;Copyright © 2023 ACME Systems." Position="0, 71" ScreenshotGuid="6382d9a5-bcbf-43b7-a250-9c9b23f5e1e7" ServerVersion="1">
+                      <uc:CVCache DisplayName="Screen CV Type Into - 'ie ame:" Id="2bcf2d5e-6a84-4b95-acbb-babb9b239b24" InformativeScreenshot="23aeabf2ec9308a2c37ac7b7dea7c683" LogicalPosition="409, 62" OcrText="AEE SEED 9 Gh STENTS (pen&#xA;1 © Open x L&#xA;© 3 «AB» THSPC » Downloads [0] | scorch Downloads »|&#xA;Reports - Upload Yearly Re ogm- evo =e m0&#xA;tame ~ | ote mods | pe A]&#xA;Fr Quick access&#xA;Home / Reports - Upload Yearly Report oeien #5 Famenore 571072023 12:01 PM File&#xA;olde&#xA;[0 Generate¥eariyReport Citixhpp Ya 02TOM Fie fold]&#xA;reason fhe folowing fom fo be able f upton $B Dourlosds #3 ce Liprary1088mumkg 425720231216PM  NUPKG i&#xA;ft in he following form to be&#xA;able to Upload 2 spec Documents #  [ ACME&#xA;Library.1.0.65.nupkg ars 250M NUPKG E]&#xA;i Ebiwe  # [ACME Liber 05nueks wanna nase NUPKG El&#xA;Vendor TaxID: [J ACME Library [1 ACME Library.1.0.67.nugkg 4/26/2023 12:57PM NUPKG o |&#xA;( | [] ReFromewori Test L) ACME Library. 1.058 nupkg 4/26/2023 1:27PM NUPKG Fi&#xA;0 Report [0] ACME Library.1060.nupkg 4I620232300M NUPKG Fi&#xA;ver Ox [0] ACME Library.1070nupkg 4262023 5430M NUPKG Fi&#xA;: ports * [0] ACME Library.1071.nupkg 4262023 6450M NUPKG Fi&#xA;[ — - ] J ThisPC ] DO acve tbrary1.072nupkg 4/26/20237:21 PM NUPKG Fi&#xA;ACNE brary. 073g RBTHM NUPKG Fv oF Network ie Hon ARE 1 S [ Select Report File ] ie ame: | ACME Library 053k of Janse “|&#xA;[ ego re | | open || concer |&#xA;Copyright © 2023 ACME Systems." Position="409, 62" ScreenshotGuid="6382d9a5-bcbf-43b7-a250-9c9b23f5e1e7" ServerVersion="1">
                         <uc:CVCache.CvTables>
                           <x:Array Type="uc:CvTableInfo">
                             <uc:CvTableInfo>
@@ -1112,7 +1128,7 @@
                           </scg:List>
                         </uc:CVCache.OcrTexts>
                       </uc:CVCache>
-                      <uc:CVCache DisplayName="Screen CV Element Exists - 'Ch" Id="e6756984-eba0-4346-baed-950afc7a3a7f" InformativeScreenshot="f6b63fea5b56df989d418f6960bb52c1" LogicalPosition="0, 71" OcrText="AEE SEED 9 Gh STENTS (pen&#xA;1 © Open x L&#xA;© 5c ABs HSC » Downlosts |] | serch Dawniosds 2&#xA;Reports - Upload Yearly Re oume- toi = m0&#xA;Name ~ |potemositid | pe AJ&#xA;R Quick access on&#xA;Home / Reports - Upload Yearly Report open « S0/20231201 PM File olde&#xA;icp 2/2023 1027M File told]&#xA;rary 052 i 42672023 215M NUPKG FL&#xA;Please fill in&#xA;the following form to be able to upload iN ACME Library1082.0pkg re va amon Noe]&#xA;Report eck the fil name and try again. Checktheerame and ry a: a 42872023 244 0M. NUPKG&#xA;Vendor TaxD: ks asa asmon nae |&#xA;I Oregon LL] ACME&#xA;Library1058.1ugkg y202390M NUPKE Fi&#xA;ACME Library1070nugk y22023543M NUPKE Fi Year: [0 Reports £) Ace trary #9 2s:&#xA;[0] ACME iorsry 071 npg Jr ——&#xA;[ — - ] J ThisPC ] DO acve&#xA;tbrary1.072nupkg 4/26/20237:21 PM NUPKG Fi&#xA;ACME Library1 073 nuk 2BTAM NUPKE Fv&#xA;3 Network (Drove nn10B ns = N [ Select Report File ] Flemome [AVE ay&#xA;0s | [AFT “&#xA;| epmmomem | | open || concer |&#xA;Copyright ® 2023 ACME Systems" Position="0, 71" ScreenshotGuid="d844c9cf-ba89-4499-b812-5493fd298e71" ServerVersion="1">
+                      <uc:CVCache DisplayName="Screen CV Element Exists - 'Ch" Id="e6756984-eba0-4346-baed-950afc7a3a7f" InformativeScreenshot="f6b63fea5b56df989d418f6960bb52c1" LogicalPosition="409, 62" OcrText="AEE SEED 9 Gh STENTS (pen&#xA;1 © Open x L&#xA;© 5c ABs HSC » Downlosts |] | serch Dawniosds 2&#xA;Reports - Upload Yearly Re oume- toi = m0&#xA;Name ~ |potemositid | pe AJ&#xA;R Quick access on&#xA;Home / Reports - Upload Yearly Report open « S0/20231201 PM File olde&#xA;icp 2/2023 1027M File told]&#xA;rary 052 i 42672023 215M NUPKG FL&#xA;Please fill in&#xA;the following form to be able to upload iN ACME Library1082.0pkg re va amon Noe]&#xA;Report eck the fil name and try again. Checktheerame and ry a: a 42872023 244 0M. NUPKG&#xA;Vendor TaxD: ks asa asmon nae |&#xA;I Oregon LL] ACME&#xA;Library1058.1ugkg y202390M NUPKE Fi&#xA;ACME Library1070nugk y22023543M NUPKE Fi Year: [0 Reports £) Ace trary #9 2s:&#xA;[0] ACME iorsry 071 npg Jr ——&#xA;[ — - ] J ThisPC ] DO acve&#xA;tbrary1.072nupkg 4/26/20237:21 PM NUPKG Fi&#xA;ACME Library1 073 nuk 2BTAM NUPKE Fv&#xA;3 Network (Drove nn10B ns = N [ Select Report File ] Flemome [AVE ay&#xA;0s | [AFT “&#xA;| epmmomem | | open || concer |&#xA;Copyright ® 2023 ACME Systems" Position="409, 62" ScreenshotGuid="d844c9cf-ba89-4499-b812-5493fd298e71" ServerVersion="1">
                         <uc:CVCache.CvTables>
                           <x:Array Type="uc:CvTableInfo">
                             <uc:CvTableInfo>
@@ -1446,6 +1462,29 @@
                           </scg:List>
                         </uc:CVCache.OcrTexts>
                       </uc:CVCache>
+                      <uc:CVCache DisplayName="Screen CV Get Text - '' (Main)" Id="541ab124-9728-4c2e-b198-354be1652c02" InformativeScreenshot="87a2e569b1ddc762002fceeba61d1ff8" LogicalPosition="409, 62" OcrText="| acme-test uipath.com&#xD;&#xA;says&#xD;&#xA;Report&#xD;&#xA;was uploaded - confirmation id is&#xD;&#xA;24756ee3(657018c0af503497780817" Position="409, 62" ScreenshotGuid="e86d667e-6b76-475c-aef2-193aa127ef74" ServerVersion="1">
+                        <uc:CVCache.CvUiElements>
+                          <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="4">
+                            <uc:CvElementInfo Category="Button" Region="373, 106, 67, 34" />
+                          </scg:List>
+                        </uc:CVCache.CvUiElements>
+                        <uc:CVCache.OcrTexts>
+                          <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="16">
+                            <uc:OcrTextInfo Region="0, 8, 7, 52" Text="|" />
+                            <uc:OcrTextInfo Region="24, 28, 72, 10" Text="acme-test" />
+                            <uc:OcrTextInfo Region="93, 27, 80, 14" Text="uipath.com" />
+                            <uc:OcrTextInfo Region="170, 30, 28, 11" Text="says" />
+                            <uc:OcrTextInfo Region="24, 57, 42, 12" Text="Report" />
+                            <uc:OcrTextInfo Region="65, 59, 21, 7" Text="was" />
+                            <uc:OcrTextInfo Region="91, 56, 56, 13" Text="uploaded" />
+                            <uc:OcrTextInfo Region="149, 61, 4, 1" Text="-" />
+                            <uc:OcrTextInfo Region="157, 56, 72, 10" Text="confirmation" />
+                            <uc:OcrTextInfo Region="234, 56, 10, 10" Text="id" />
+                            <uc:OcrTextInfo Region="249, 59, 8, 7" Text="is" />
+                            <uc:OcrTextInfo Region="23, 76, 217, 10" Text="24756ee3(657018c0af503497780817" />
+                          </scg:List>
+                        </uc:CVCache.OcrTexts>
+                      </uc:CVCache>
                     </scg:List>
                   </uc:CvCacheContainer.Caches>
                 </uc:CvCacheContainer>
@@ -1459,7 +1498,7 @@
                 </ActivityFunc>
               </p:CVScope.OCREngine>
               <p:CVScope.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7df7dc0f-444e-431a-8276-6de881ab4460" InformativeScreenshot="c0fd7fee01bed521b919ca4eb462fb7f" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Upload Yearly Report' /&gt;&lt;webctrl tag='BODY' /&gt;" WaitForReady="INTERACTIVE">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7df7dc0f-444e-431a-8276-6de881ab4460" InformativeScreenshot="99221ef765f893ed5cf5fb337f615447" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='ACME System 1 - Upload Yearly Report - Google Chrome' /&gt;&lt;ctrl name='acme-test.uipath.com says' role='dialog' /&gt;&lt;ctrl idx='2' role='pane' /&gt;" WaitForReady="INTERACTIVE">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -1476,7 +1515,7 @@
         <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1053,337" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Menu" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1152,1022" sap2010:WorkflowViewState.IdRef="Menu_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Menu" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1154,1022" sap2010:WorkflowViewState.IdRef="Menu_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
       <x:String>System.Activities</x:String>
@@ -77,7 +77,6 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="It will navigate to work items page&#xA;" DisplayName="NavigateToWorkItems" sap:VirtualizedContainerService.HintSize="552,957" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -87,7 +86,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Started Message" sap:VirtualizedContainerService.HintSize="490,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Navigate to workitems started&quot;]" />
+    <ui:LogMessage DisplayName="Start Message" sap:VirtualizedContainerService.HintSize="490,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Navigate to workitems started&quot;]" />
     <TryCatch DisplayName="Navigate to WorkItems" sap:VirtualizedContainerService.HintSize="490,540" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <Sequence DisplayName="Navigating to workitems" sap:VirtualizedContainerService.HintSize="987,2595" sap2010:WorkflowViewState.IdRef="Sequence_7">
@@ -393,9 +392,15 @@
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Boolean" Name="WorkItemsExists" />
                     </Sequence.Variables>
-                    <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'Home / Work items' (77,173,131,10)&quot;]" DesignTimeCacheId="e8a9b2e9-3d31-4808-881f-ecdaf213e3e4" DesignTimeScaleFactor="1" DisplayName="Workitems page loaded?" sap:VirtualizedContainerService.HintSize="829,137" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_2" InformativeScreenshot="f101fb059993fac692a0bef898b048c6" Result="[WorkItemsExists]" Version="V3">
+                    <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'Home / Work items' (77,173,131,10)&quot; +&#xD;&#xA;&quot;Anchor: Text '[ACMEISystemki]' (50,11,150,31)&quot; +&#xD;&#xA;&quot;Anchor: Text '(D' (924,18,40,14)&quot;]" DesignTimeCacheId="e8a9b2e9-3d31-4808-881f-ecdaf213e3e4" DesignTimeScaleFactor="1" DisplayName="CV Element Exists - Text" sap:VirtualizedContainerService.HintSize="829,137" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_2" InformativeScreenshot="ed2153f11ccd585c68e74f18284a0396" Result="[WorkItemsExists]" Version="V3">
                       <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                         <uc:CvDescriptor>
+                          <uc:CvDescriptor.Anchors>
+                            <x:Array Type="uc:CvElementDescriptor">
+                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="50, 11, 150, 31" ElementType="Text" Text="[ACMEISystemki]" />
+                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="924, 18, 40, 14" ElementType="Text" Text="(D" />
+                            </x:Array>
+                          </uc:CvDescriptor.Anchors>
                           <uc:CvDescriptor.Target>
                             <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="77, 173, 131, 10" ElementType="Text" Text="Home / Work items" />
                           </uc:CvDescriptor.Target>

@@ -1,6 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="LaunchBrowser" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property sap2010:Annotation.AnnotationText="Use ACME site URL" Name="AcmeUrl" Type="InArgument(x:String)">
+    <x:Property sap2010:Annotation.AnnotationText="Use ACME site URL to access the page" Name="AcmeUrl" Type="InArgument(x:String)">
       <x:Property.Attributes>
         <RequiredArgumentAttribute />
       </x:Property.Attributes>
@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>932,2849</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1154,2967</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>LaunchBrowser_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="38">
@@ -92,7 +92,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Uses ACME_URL asset&#xA;It will log into Chrome&#xA;" DisplayName="LaunchBrowser" sap:VirtualizedContainerService.HintSize="919,2784" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Uses ACME_URL asset&#xA;It will log into Chrome&#xA;" DisplayName="LaunchBrowser" sap:VirtualizedContainerService.HintSize="1053,2902" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="UrlMatched" />
     </Sequence.Variables>
@@ -103,49 +103,49 @@
         <x:Boolean x:Key="IsPinned">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Start Message" sap:VirtualizedContainerService.HintSize="877,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Launch Browser started&quot;]">
+    <ui:LogMessage DisplayName="Start Message" sap:VirtualizedContainerService.HintSize="991,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Launch Browser started&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <TryCatch DisplayName="Launching browser" sap:VirtualizedContainerService.HintSize="877,2373" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Launching browser" sap:VirtualizedContainerService.HintSize="991,2470" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Launch browser sequence" sap:VirtualizedContainerService.HintSize="839,2146" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence DisplayName="Launch browser sequence" sap:VirtualizedContainerService.HintSize="953,2242" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Input validation" sap:VirtualizedContainerService.HintSize="797,767" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Input validation" sap:VirtualizedContainerService.HintSize="891,813" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Check url Log Message" sap:VirtualizedContainerService.HintSize="755,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Checking if URL is valid&quot;]">
+            <ui:LogMessage DisplayName="Check url Log Message" sap:VirtualizedContainerService.HintSize="829,92" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Checking if URL is valid&quot;]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
-            <ui:IsMatch BuilderPattern="(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-a-zA-Z0-9+&amp;@#\/%=~_|$?!:,.]*\)|[-a-zA-Z0-9+&amp;@#\/%=~_|$?!:,.])*(?:\([-a-zA-Z0-9+&amp;@#\/%=~_|$?!:,.]*\)|[a-zA-Z0-9+&amp;@#\/%=~_|$])" DisplayName="Check If the URL is Matched " sap:VirtualizedContainerService.HintSize="755,59" sap2010:WorkflowViewState.IdRef="IsMatch_1" Input="[AcmeUrl]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;URL&quot;,&quot;OperationName&quot;:&quot;URL&quot;,&quot;OperationValue&quot;:&quot;(?:(?:https?|ftp|file):\\\/\\\/|www\\.|ftp\\.)(?:\\([-a-zA-Z0-9+&amp;@#\\\/%=~_|$?!:,.]*\\)|[-a-zA-Z0-9+&amp;@#\\\/%=~_|$?!:,.])*(?:\\([-a-zA-Z0-9+&amp;@#\\\/%=~_|$?!:,.]*\\)|[a-zA-Z0-9+&amp;@#\\\/%=~_|$])&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-a-zA-Z0-9+&amp;@#\/%=~_|$?!:,.]*\)|[-a-zA-Z0-9+&amp;@#\/%=~_|$?!:,.])*(?:\([-a-zA-Z0-9+&amp;@#\/%=~_|$?!:,.]*\)|[a-zA-Z0-9+&amp;@#\/%=~_|$])" RegexOption="IgnoreCase, Compiled" Result="[UrlMatched]">
+            <ui:IsMatch BuilderPattern="(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-a-zA-Z0-9+&amp;@#\/%=~_|$?!:,.]*\)|[-a-zA-Z0-9+&amp;@#\/%=~_|$?!:,.])*(?:\([-a-zA-Z0-9+&amp;@#\/%=~_|$?!:,.]*\)|[a-zA-Z0-9+&amp;@#\/%=~_|$])" DisplayName="Check If the URL is Matched " sap:VirtualizedContainerService.HintSize="829,60" sap2010:WorkflowViewState.IdRef="IsMatch_1" Input="[AcmeUrl]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;URL&quot;,&quot;OperationName&quot;:&quot;URL&quot;,&quot;OperationValue&quot;:&quot;(?:(?:https?|ftp|file):\\\/\\\/|www\\.|ftp\\.)(?:\\([-a-zA-Z0-9+&amp;@#\\\/%=~_|$?!:,.]*\\)|[-a-zA-Z0-9+&amp;@#\\\/%=~_|$?!:,.])*(?:\\([-a-zA-Z0-9+&amp;@#\\\/%=~_|$?!:,.]*\\)|[a-zA-Z0-9+&amp;@#\\\/%=~_|$])&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-a-zA-Z0-9+&amp;@#\/%=~_|$?!:,.]*\)|[-a-zA-Z0-9+&amp;@#\/%=~_|$?!:,.])*(?:\([-a-zA-Z0-9+&amp;@#\/%=~_|$?!:,.]*\)|[a-zA-Z0-9+&amp;@#\/%=~_|$])" RegexOption="IgnoreCase, Compiled" Result="[UrlMatched]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:IsMatch>
-            <If sap2010:Annotation.AnnotationText="Checks if the URL is matched or Not&#xA;" Condition="[UrlMatched]" DisplayName="If Url matches or not" sap:VirtualizedContainerService.HintSize="755,445" sap2010:WorkflowViewState.IdRef="If_1">
+            <If sap2010:Annotation.AnnotationText="Checks if the URL is matched or Not&#xA;" Condition="[UrlMatched]" DisplayName="If Url matches or not" sap:VirtualizedContainerService.HintSize="829,470" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -153,7 +153,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <ui:LogMessage DisplayName="Url valid Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Browser URL is Valid&quot;]">
+                <ui:LogMessage DisplayName="Url valid Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Browser URL is Valid&quot;]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -162,39 +162,39 @@
                 </ui:LogMessage>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="if not matched" sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="if not matched" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Url not valid Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[&quot;Browser URL is Not Valid&quot;]">
+                  <ui:LogMessage DisplayName="Url not valid Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[&quot;Browser URL is Not Valid&quot;]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsPinned">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:LogMessage>
-                  <Throw DisplayName="Browser invalid Throw" Exception="[new BusinessRuleException(&quot;Browser URL is Not Valid&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                  <Throw DisplayName="Browser invalid Throw" Exception="[new BusinessRuleException(&quot;Browser URL is Not Valid&quot;)]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Throw_2" />
                 </Sequence>
               </If.Else>
             </If>
           </Sequence>
-          <ui:LogMessage DisplayName="Open browser Log Message" sap:VirtualizedContainerService.HintSize="797,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Opening browser&quot;]">
+          <ui:LogMessage DisplayName="Open browser Log Message" sap:VirtualizedContainerService.HintSize="891,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Opening browser&quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Chrome" sap:VirtualizedContainerService.HintSize="797,163" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[AcmeUrl]">
+          <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Chrome" sap:VirtualizedContainerService.HintSize="891,167" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[AcmeUrl]">
             <ui:OpenBrowser.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Chrome Window" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+                <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Chrome Window" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
               </ActivityAction>
             </ui:OpenBrowser.Body>
             <sap:WorkflowViewStateService.ViewState>
@@ -203,7 +203,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:OpenBrowser>
-          <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="c891a4f0-08bd-447e-a726-b43167d7f0cb" DisplayName="CV Screen Scope Login page" sap:VirtualizedContainerService.HintSize="797,913" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V3">
+          <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="c891a4f0-08bd-447e-a726-b43167d7f0cb" DisplayName="CV Screen Scope Login page" sap:VirtualizedContainerService.HintSize="891,939" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V3">
             <p:CVScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -213,7 +213,7 @@
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="LoginPageExists" />
                   </Sequence.Variables>
-                  <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'Login' (64,96,85,33)&quot; +&#xD;&#xA;&quot;Anchor: Text '[ACMEISystemki]' (50,11,150,31)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Home / Login' (77,173,94,13)&quot; +&#xD;&#xA;&quot;Anchor: Text 'To continue, please authenticate here' (132,240,400,22)&quot;]" DesignTimeCacheId="c891a4f0-08bd-447e-a726-b43167d7f0cb" DesignTimeScaleFactor="1" DisplayName="Login page exists?" sap:VirtualizedContainerService.HintSize="755,136" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_1" InformativeScreenshot="11b3378d555f7303846d372cd9314844" Result="[LoginPageExists]" Version="V3">
+                  <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'Login' (64,96,85,33)&quot; +&#xA;&quot;Anchor: Text '[ACMEISystemki]' (50,11,150,31)&quot; +&#xA;&quot;Anchor: Text 'Home / Login' (77,173,94,13)&quot; +&#xA;&quot;Anchor: Text 'To continue, please authenticate here' (132,240,400,22)&quot;]" DesignTimeCacheId="c891a4f0-08bd-447e-a726-b43167d7f0cb" DesignTimeScaleFactor="1" DisplayName="Login page exists?" sap:VirtualizedContainerService.HintSize="829,137" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_1" InformativeScreenshot="11b3378d555f7303846d372cd9314844" Result="[LoginPageExists]" Version="V3">
                     <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                       <uc:CvDescriptor>
                         <uc:CvDescriptor.Anchors>
@@ -234,14 +234,14 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </p:CvElementExistsWithDescriptor>
-                  <If Condition="[LoginPageExists]" DisplayName="If login page exists" sap:VirtualizedContainerService.HintSize="755,402" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[LoginPageExists]" DisplayName="If login page exists" sap:VirtualizedContainerService.HintSize="829,426" sap2010:WorkflowViewState.IdRef="If_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsPinned">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <ui:LogMessage DisplayName="browser success Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Trace" Message="[&quot;Browser opened successfully&quot;]">
+                      <ui:LogMessage DisplayName="browser success Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Trace" Message="[&quot;Browser opened successfully&quot;]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -251,21 +251,21 @@
                       </ui:LogMessage>
                     </If.Then>
                     <If.Else>
-                      <Sequence DisplayName="if browser page doesnot exists" sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence DisplayName="if browser page doesnot exists" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="browser failed Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Error" Message="[&quot;Browser opening was failed&quot;]">
+                        <ui:LogMessage DisplayName="browser failed Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Error" Message="[&quot;Browser opening was failed&quot;]">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsPinned">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:LogMessage>
-                        <Throw DisplayName="browser failed Throw" Exception="[new BusinessRuleException(&quot;Browser not opened&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                        <Throw DisplayName="browser failed Throw" Exception="[new BusinessRuleException(&quot;Browser not opened&quot;)]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Throw_3" />
                       </Sequence>
                     </If.Else>
                   </If>
@@ -279,7 +279,7 @@
               <uc:CvCacheContainer>
                 <uc:CvCacheContainer.Caches>
                   <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
-                    <uc:CVCache DisplayName="Screen CV Element Exists - 'Lo (Main)" Id="c891a4f0-08bd-447e-a726-b43167d7f0cb" InformativeScreenshot="4f18195b79af4eb5a33112adfd3b7f1e" LogicalPosition="0, 71" OcrText="[ACMEISystemki] XE apm&#xD;&#xA;Login&#xD;&#xA;Home / Login&#xD;&#xA;To continue, please authenticate here&#xD;&#xA;Email:&#xD;&#xA;[1&#xD;&#xA;Password:&#xD;&#xA;(OJ Remember Me&#xD;&#xA;Forgot Your&#xD;&#xA;Password? ~~ Register&#xD;&#xA;Copyright © 2023 ACME Systems" Position="0, 71" ScreenshotGuid="5224c1c7-e420-4118-afe4-b0222e53de2e" ServerVersion="1">
+                    <uc:CVCache DisplayName="Screen CV Element Exists - 'Lo (Main)" Id="c891a4f0-08bd-447e-a726-b43167d7f0cb" InformativeScreenshot="4f18195b79af4eb5a33112adfd3b7f1e" LogicalPosition="0, 71" OcrText="[ACMEISystemki] XE apm&#xA;Login&#xA;Home / Login&#xA;To continue, please authenticate here&#xA;Email:&#xA;[1&#xA;Password:&#xA;(OJ Remember Me&#xA;Forgot Your&#xA;Password? ~~ Register&#xA;Copyright © 2023 ACME Systems" Position="0, 71" ScreenshotGuid="5224c1c7-e420-4118-afe4-b0222e53de2e" ServerVersion="1">
                       <uc:CVCache.CvUiElements>
                         <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="16">
                           <uc:CvElementInfo Category="Button" Region="130, 459, 63, 37" />
@@ -340,7 +340,7 @@
                 <ActivityFunc.Argument>
                   <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
                 </ActivityFunc.Argument>
-                <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GoogleOCR_1" Image="[Image]" />
+                <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="GoogleOCR_1" Image="[Image]" />
               </ActivityFunc>
             </p:CVScope.OCREngine>
             <p:CVScope.Target>
@@ -362,7 +362,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="843,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="957,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -373,27 +373,27 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="exception Sequence" sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="exception Sequence" sap:VirtualizedContainerService.HintSize="450,264" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Error Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Launching browser failed&quot;]">
+              <ui:LogMessage DisplayName="Error Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Launching browser failed&quot;]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsPinned">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:LogMessage>
-              <Rethrow DisplayName="Browser error Rethrow" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+              <Rethrow DisplayName="Browser error Rethrow" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
             </Sequence>
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="End Message" sap:VirtualizedContainerService.HintSize="877,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Launch Browser ended&quot;]">
+    <ui:LogMessage DisplayName="End Message" sap:VirtualizedContainerService.HintSize="991,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Launch Browser ended&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">True</x:Boolean>
