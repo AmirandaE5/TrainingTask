@@ -775,6 +775,6 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1025,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Extract work items ended&quot;]" />
+    <ui:LogMessage DisplayName="End Message" sap:VirtualizedContainerService.HintSize="1025,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Extract work items ended&quot;]" />
   </Sequence>
 </Activity>
