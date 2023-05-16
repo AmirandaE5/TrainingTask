@@ -220,6 +220,11 @@
                   <Sequence DisplayName="Filter Workitems" sap:VirtualizedContainerService.HintSize="891,406" sap2010:WorkflowViewState.IdRef="Sequence_8">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="sd:DataTable" Name="WorkItemsDataTableDT" />
+                      <Variable x:TypeArguments="x:String" Name="Status">
+                        <Variable.Default>
+                          <Literal x:TypeArguments="x:String">Open</Literal>
+                        </Variable.Default>
+                      </Variable>
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -243,7 +248,7 @@
                               <InArgument x:TypeArguments="x:String">["Status"]</InArgument>
                             </ui:FilterOperationArgument.Column>
                             <ui:FilterOperationArgument.Operand>
-                              <InArgument x:TypeArguments="x:String">["Open"]</InArgument>
+                              <InArgument x:TypeArguments="x:String">[Status]</InArgument>
                             </ui:FilterOperationArgument.Operand>
                           </ui:FilterOperationArgument>
                         </scg:List>

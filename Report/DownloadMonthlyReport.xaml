@@ -19,7 +19,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1154,982</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1283,6116</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DownloadMonthlyReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="47">
@@ -110,9 +110,10 @@
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="It will download the Monthly reports according to the yeard and TaxID given&#xA;" DisplayName="DownloadMonthlyReport" sap:VirtualizedContainerService.HintSize="552,917" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="It will download the Monthly reports according to the yeard and TaxID given&#xA;" DisplayName="DownloadMonthlyReport" sap:VirtualizedContainerService.HintSize="1293,6051" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="DocumentsPath" />
       <Variable x:TypeArguments="x:Boolean" Name="ReportsExists" />
@@ -123,72 +124,40 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Start Message" sap:VirtualizedContainerService.HintSize="490,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Download monthly report started&quot;]" />
-    <TryCatch DisplayName="Download monthly report" sap:VirtualizedContainerService.HintSize="490,500" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Start Message" sap:VirtualizedContainerService.HintSize="1231,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Download monthly report started&quot;]" />
+    <TryCatch DisplayName="Download monthly report" sap:VirtualizedContainerService.HintSize="1231,5634" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="s:String[]" Default="[{&quot;January&quot;, &quot;February&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;, &quot;June&quot;, &quot;July&quot;, &quot;August&quot;, &quot;September&quot;, &quot;October&quot;, &quot;November&quot;, &quot;December&quot;}]" Name="Months" />
       </TryCatch.Variables>
       <TryCatch.Try>
-        <Sequence DisplayName="Downloading monthly report" sap:VirtualizedContainerService.HintSize="1193,6342" sap2010:WorkflowViewState.IdRef="Sequence_50">
+        <Sequence DisplayName="Downloading monthly report" sap:VirtualizedContainerService.HintSize="1193,5406" sap2010:WorkflowViewState.IdRef="Sequence_50">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Input Validation" sap:VirtualizedContainerService.HintSize="1131,1475" sap2010:WorkflowViewState.IdRef="Sequence_37">
+          <Sequence DisplayName="Input Validation" sap:VirtualizedContainerService.HintSize="1131,539" sap2010:WorkflowViewState.IdRef="Sequence_37">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[String.IsNullOrEmpty(TaxID)]" DisplayName="Check if taxid is valid" sap:VirtualizedContainerService.HintSize="829,428" sap2010:WorkflowViewState.IdRef="If_8">
+            <If Condition="[String.IsNullOrEmpty(TaxID) and String.IsNullOrEmpty(Year) And String.IsNullOrEmpty(ReportsPath)]" DisplayName="Check if input data is valid" sap:VirtualizedContainerService.HintSize="829,428" sap2010:WorkflowViewState.IdRef="If_8">
               <If.Then>
-                <Sequence DisplayName="Invalid taxID" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                <Sequence DisplayName="Invalid input data" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_34">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="tax id error Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Error" Message="[&quot;Error getting TaxID&quot;]" />
-                  <Throw DisplayName="Error getting TaxID" Exception="[New BusinessRuleException(&quot;Error getting TaxID&quot;)]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Throw_6" />
+                  <ui:LogMessage DisplayName="invalid data error Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Error" Message="[&quot;Error invalid data&quot;]" />
+                  <Throw DisplayName="Error invalid data" Exception="[New BusinessRuleException(&quot;Error invalid input data&quot;)]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Throw_6" />
                 </Sequence>
               </If.Then>
               <If.Else>
-                <ui:LogMessage DisplayName="tax id success Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;TaxID retrieved correctly&quot;]" />
-              </If.Else>
-            </If>
-            <If Condition="[String.IsNullOrEmpty(Year)]" DisplayName="Check If year is valid" sap:VirtualizedContainerService.HintSize="829,428" sap2010:WorkflowViewState.IdRef="If_9">
-              <If.Then>
-                <Sequence DisplayName="Invalid year" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_35">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="year error Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Error" Message="[&quot;Error getting Year&quot;]" />
-                  <Throw DisplayName="Error getting Year" Exception="[New BusinessRuleException(&quot;Error getting Year&quot;)]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Throw_7" />
-                </Sequence>
-              </If.Then>
-              <If.Else>
-                <ui:LogMessage DisplayName="year success Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Year retrieved correctly&quot;]" />
-              </If.Else>
-            </If>
-            <If Condition="[String.IsNullOrEmpty(ReportsPath)]" DisplayName="Check If path is valid" sap:VirtualizedContainerService.HintSize="829,428" sap2010:WorkflowViewState.IdRef="If_10">
-              <If.Then>
-                <Sequence DisplayName="Invalid path" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_36">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="path error Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Error" Message="[&quot;Error getting ReportsPath&quot;]" />
-                  <Throw DisplayName="Error getting ReportsPath" Exception="[New BusinessRuleException(&quot;Error getting ReportsPath&quot;)]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Throw_8" />
-                </Sequence>
-              </If.Then>
-              <If.Else>
-                <ui:LogMessage DisplayName="path success Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;ReportsPath retrieved correctly&quot;]" />
+                <ui:LogMessage DisplayName="valid input data success Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;TaxID retrieved correctly&quot;]" />
               </If.Else>
             </If>
           </Sequence>
@@ -1135,10 +1104,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="456,337" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1197,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -1159,6 +1128,6 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="End Message" sap:VirtualizedContainerService.HintSize="490,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Download monthly report ended&quot;]" />
+    <ui:LogMessage DisplayName="End Message" sap:VirtualizedContainerService.HintSize="1231,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Download monthly report ended&quot;]" />
   </Sequence>
 </Activity>

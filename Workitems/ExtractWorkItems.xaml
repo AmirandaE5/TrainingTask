@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1154,4605</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1154,4540</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExtractWorkItems_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="45">
@@ -107,7 +107,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="ExtractWorkItems" sap:VirtualizedContainerService.HintSize="1087,4540" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ExtractWorkItems" sap:VirtualizedContainerService.HintSize="1087,4475" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="WorkItems" />
       <Variable x:TypeArguments="x:Boolean" Name="WorkItemsExists" />
@@ -118,7 +118,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Start Message" sap:VirtualizedContainerService.HintSize="1025,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Extract work items started&quot;]" />
-    <TryCatch sap2010:Annotation.AnnotationText="It will extract the work items from the table&#xA;" DisplayName="Extract work items" sap:VirtualizedContainerService.HintSize="1025,4165" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch sap2010:Annotation.AnnotationText="It will extract the work items from the table&#xA;" DisplayName="Extract work items" sap:VirtualizedContainerService.HintSize="1025,4100" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -127,14 +127,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Extracting workitems" sap:VirtualizedContainerService.HintSize="987,3475" sap2010:WorkflowViewState.IdRef="Sequence_68">
+        <Sequence DisplayName="Extracting workitems" sap:VirtualizedContainerService.HintSize="987,3410" sap2010:WorkflowViewState.IdRef="Sequence_68">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="5aehhMtY4g2iuEltqGUyepTZ6e4e+EpS8erhB7sk0hR9UqY41ifbtSA8pBDrm+pqLO38A274w118WWeNiZJEfw==" CvMethod="ElementDetection, OCR" DesignTimeCacheId="73b9ba98-3d1e-44a5-af68-563b1df62a94" DisplayName="Workitems scope" sap:VirtualizedContainerService.HintSize="925,3364" sap2010:WorkflowViewState.IdRef="CVScope_14" Version="V3">
+          <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" ApiKey="5aehhMtY4g2iuEltqGUyepTZ6e4e+EpS8erhB7sk0hR9UqY41ifbtSA8pBDrm+pqLO38A274w118WWeNiZJEfw==" CvMethod="ElementDetection, OCR" DesignTimeCacheId="73b9ba98-3d1e-44a5-af68-563b1df62a94" DisplayName="Workitems scope" sap:VirtualizedContainerService.HintSize="925,3299" sap2010:WorkflowViewState.IdRef="CVScope_14" Version="V3">
             <p:CVScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -184,20 +184,19 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Error" Message="[&quot;Workitems page not loaded&quot;]" />
+                          <ui:LogMessage DisplayName="Workitems  error Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Error" Message="[&quot;Workitems page not loaded&quot;]" />
                           <Throw DisplayName="Throw workitems page not loaded" Exception="[New BusinessRuleException(&quot;workitems page not loaded&quot;)]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Throw_5" />
                         </Sequence>
                       </If.Else>
                     </If>
                   </Sequence>
-                  <Sequence DisplayName="Extract work items" sap:VirtualizedContainerService.HintSize="891,1483" sap2010:WorkflowViewState.IdRef="Sequence_75">
+                  <Sequence DisplayName="Extract work items" sap:VirtualizedContainerService.HintSize="891,1418" sap2010:WorkflowViewState.IdRef="Sequence_75">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="Delay_19" />
                     <ui:RepeatNumberOfTimesX DisplayName="Scroll down to view the table" sap:VirtualizedContainerService.HintSize="434,309" sap2010:WorkflowViewState.IdRef="RepeatNumberOfTimesX_16" NumberOfTimes="5" StartAt="1">
                       <ui:RepeatNumberOfTimesX.Body>
                         <ActivityAction x:TypeArguments="x:Int32">

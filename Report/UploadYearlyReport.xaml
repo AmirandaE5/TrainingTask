@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1139,7023</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1139,6087</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UploadYearlyReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="40">
@@ -93,6 +93,7 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -101,7 +102,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="It will upload the yearly report from the downloaded monthly reports according to the TaxID" DisplayName="UploadYearlyReport" sap:VirtualizedContainerService.HintSize="1149,6958" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="It will upload the yearly report from the downloaded monthly reports according to the TaxID" DisplayName="UploadYearlyReport" sap:VirtualizedContainerService.HintSize="1149,6022" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="DocumentsPath" />
       <Variable x:TypeArguments="x:String" Default="[DocumentsPath + ReportsPath +TaxID +&quot;-&quot; + Year + &quot;.xlsx&quot;]" Name="ReportPath" />
@@ -115,73 +116,41 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Start Message" sap:VirtualizedContainerService.HintSize="1087,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Upload Yearly report started&quot;]" />
-    <TryCatch DisplayName="Upload Yearly Report" sap:VirtualizedContainerService.HintSize="1087,6552" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Upload Yearly Report" sap:VirtualizedContainerService.HintSize="1087,5616" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="Uploading yearly report" sap:VirtualizedContainerService.HintSize="1049,5904" sap2010:WorkflowViewState.IdRef="Sequence_17">
+        <Sequence DisplayName="Uploading yearly report" sap:VirtualizedContainerService.HintSize="1049,4968" sap2010:WorkflowViewState.IdRef="Sequence_17">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Input Validation" sap:VirtualizedContainerService.HintSize="987,1475" sap2010:WorkflowViewState.IdRef="Sequence_24">
+          <Sequence DisplayName="Input Validation" sap:VirtualizedContainerService.HintSize="987,539" sap2010:WorkflowViewState.IdRef="Sequence_24">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[String.IsNullOrEmpty(TaxID)]" DisplayName="Check If TaxID is valid" sap:VirtualizedContainerService.HintSize="829,428" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[String.IsNullOrEmpty(TaxID) and String.IsNullOrEmpty(Year) and String.IsNullOrEmpty(ReportsPath)]" DisplayName="Check If input data is valid" sap:VirtualizedContainerService.HintSize="829,428" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Sequence DisplayName="Error with TaxID" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                <Sequence DisplayName="Error with input data" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_21">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Credential error Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;Error getting TaxID&quot;]" />
-                  <Throw DisplayName="Error getting TaxID" Exception="[New BusinessRuleException(&quot;Error getting TaxID&quot;)]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                  <ui:LogMessage DisplayName="input data error Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;Error getting input data&quot;]" />
+                  <Throw DisplayName="Error getting input data" Exception="[New BusinessRuleException(&quot;Error getting input data&quot;)]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Throw_2" />
                 </Sequence>
               </If.Then>
               <If.Else>
-                <ui:LogMessage DisplayName="TaxID success Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;TaxID retrieved correctly&quot;]" />
-              </If.Else>
-            </If>
-            <If Condition="[String.IsNullOrEmpty(Year)]" DisplayName="Check If year is valid" sap:VirtualizedContainerService.HintSize="829,428" sap2010:WorkflowViewState.IdRef="If_3">
-              <If.Then>
-                <Sequence DisplayName="Invalid year" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_22">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Year error Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[&quot;Error getting Year&quot;]" />
-                  <Throw DisplayName="Error getting Year" Exception="[New BusinessRuleException(&quot;Error getting Year&quot;)]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Throw_3" />
-                </Sequence>
-              </If.Then>
-              <If.Else>
-                <ui:LogMessage DisplayName="Year success Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Year retrieved correctly&quot;]" />
-              </If.Else>
-            </If>
-            <If Condition="[String.IsNullOrEmpty(ReportsPath)]" DisplayName="Check If report is valid" sap:VirtualizedContainerService.HintSize="829,428" sap2010:WorkflowViewState.IdRef="If_4">
-              <If.Then>
-                <Sequence DisplayName="Invalid report path" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_23">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Report path error Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Error" Message="[&quot;Error getting ReportsPath&quot;]" />
-                  <Throw DisplayName="Error getting ReportsPath" Exception="[New BusinessRuleException(&quot;Error getting ReportsPath&quot;)]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Throw_4" />
-                </Sequence>
-              </If.Then>
-              <If.Else>
-                <ui:LogMessage DisplayName="Report path success Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;ReportsPath retrieved correctly&quot;]" />
+                <ui:LogMessage DisplayName="input data success Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;TaxID retrieved correctly&quot;]" />
               </If.Else>
             </If>
           </Sequence>
@@ -298,7 +267,7 @@
                         </ui:Target>
                       </p:CvSelectItemWithDescriptor.Target>
                     </p:CvSelectItemWithDescriptor>
-                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Button (130,413,140,37)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Select Report File ]' (145,415,124,32)&quot; +&#xD;&#xA;&quot;Anchor: Button (130,461,118,38)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Year:' (132,345,35,10)&quot;]" DesignTimeCacheId="45074062-417d-4ed1-b55e-3a3c021addcd" DesignTimeScaleFactor="1" DisplayName="CV Click - Button" sap:VirtualizedContainerService.HintSize="891,137" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_4" InformativeScreenshot="efee8791634f1d1d2c8f862815333535" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Button (130,413,140,37)&quot; +&#xA;&quot;Anchor: Text 'Select Report File ]' (145,415,124,32)&quot; +&#xA;&quot;Anchor: Button (130,461,118,38)&quot; +&#xA;&quot;Anchor: Text 'Year:' (132,345,35,10)&quot;]" DesignTimeCacheId="45074062-417d-4ed1-b55e-3a3c021addcd" DesignTimeScaleFactor="1" DisplayName="CV Click - Button" sap:VirtualizedContainerService.HintSize="891,137" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_4" InformativeScreenshot="efee8791634f1d1d2c8f862815333535" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
                       <p:CvClickWithDescriptor.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -539,7 +508,7 @@
                         </ui:Target>
                       </p:CvClickWithDescriptor.Target>
                     </p:CvClickWithDescriptor>
-                    <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (23,76,217,10)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Report was uploaded' (24,56,123,13)&quot;]" DesignTimeCacheId="541ab124-9728-4c2e-b198-354be1652c02" DesignTimeScaleFactor="1" DisplayName="Get confirmation ID" sap:VirtualizedContainerService.HintSize="891,167" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="950dd1ce74e4701f7f9bd0a2a62a3474" RefreshBefore="True" Version="V3">
+                    <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (23,76,217,10)&quot; +&#xA;&quot;Anchor: Text 'Report was uploaded' (24,56,123,13)&quot;]" DesignTimeCacheId="541ab124-9728-4c2e-b198-354be1652c02" DesignTimeScaleFactor="1" DisplayName="Get confirmation ID" sap:VirtualizedContainerService.HintSize="891,167" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="950dd1ce74e4701f7f9bd0a2a62a3474" RefreshBefore="True" Version="V3">
                       <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                         <uc:CvDescriptor>
                           <uc:CvDescriptor.Anchors>
@@ -1462,7 +1431,7 @@
                           </scg:List>
                         </uc:CVCache.OcrTexts>
                       </uc:CVCache>
-                      <uc:CVCache DisplayName="Screen CV Get Text - '' (Main)" Id="541ab124-9728-4c2e-b198-354be1652c02" InformativeScreenshot="87a2e569b1ddc762002fceeba61d1ff8" LogicalPosition="409, 62" OcrText="| acme-test uipath.com&#xD;&#xA;says&#xD;&#xA;Report&#xD;&#xA;was uploaded - confirmation id is&#xD;&#xA;24756ee3(657018c0af503497780817" Position="409, 62" ScreenshotGuid="e86d667e-6b76-475c-aef2-193aa127ef74" ServerVersion="1">
+                      <uc:CVCache DisplayName="Screen CV Get Text - '' (Main)" Id="541ab124-9728-4c2e-b198-354be1652c02" InformativeScreenshot="87a2e569b1ddc762002fceeba61d1ff8" LogicalPosition="409, 62" OcrText="| acme-test uipath.com&#xA;says&#xA;Report&#xA;was uploaded - confirmation id is&#xA;24756ee3(657018c0af503497780817" Position="409, 62" ScreenshotGuid="e86d667e-6b76-475c-aef2-193aa127ef74" ServerVersion="1">
                         <uc:CVCache.CvUiElements>
                           <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="4">
                             <uc:CvElementInfo Category="Button" Region="373, 106, 67, 34" />
