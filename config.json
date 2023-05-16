@@ -1,0 +1,15 @@
+{ 
+    "WorkFlowToExecute":"Generate Yearly Report AM",
+    "WIType" : "WI4",
+    "ACME_LoginAM" : "ACME_LoginAM",
+    "AcmeUrl" : "https://acme-test.uipath.com/",
+    "Year" : "2022",
+    "ReportsPath" : "/Reports",
+    "MailTo": "alfredo.miranda@e5.ai",
+    "Subject": "Bot has finished run", 
+    "Body": "Attached are the files", 
+    "ProcessName":"Generate Yearly Report AM", 
+    "TaskName":"Generate Yearly Report AM" ,
+    "Success" : "Success"
+}
+  
